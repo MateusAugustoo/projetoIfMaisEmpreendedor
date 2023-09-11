@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      .custom-bg {
+          background-color: #87CEFA;
+      }
+  </style>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tela de Cadastro</title>
+  </head>
+
+  <body class="overflow-hidden">
+    <div
+      class="max-sm:bg-gradient-to-t from-orange-600 to-amber-400 absolute shadow flex-1 h-screen w-screen"
+    >
+    <div class="max-sm: flex mt-9 items-baseline">
+      <a
+        href="../telaDeEntrada.html"
+        class="w-[74px] h-1.5 text-white text-sm font-semibold ml-4"
+        >Cancelar</a
+      >
+      <p class="text-white text-xl font-bold w-[150px] mx-auto">
+      Cadastrar
+      </p>
+    </div>
+     
+      <img
+        src="../images/imagem.png"
+        alt="imagem de um prato com comida"
+        class="w-[170px] h-[205.04px] mx-auto mt-8 rotate-[70deg]"
+      />
+
+      <form action="" class="mt-10 space-y-4 text-center" id="formCadastro">
+        <input
+          type="text"
+          name="nome"
+          autocomplete="username"
+          class="w-[329px] h-[60px] rounded-[50px] text-white bg-transparent border border-white placeholder-white font-bold text-lg px-8 focus:outline-neutral-50"
+          placeholder="Nome"
+        />
+        <input
+          type="email"
+          name="email"
+          autocomplete="email"
+          class="w-[329px] h-[60px] rounded-[50px] text-white bg-transparent border border-white placeholder-white font-bold text-lg px-8 focus:outline-neutral-50"
+          placeholder="Email"
+        />
+        <input
+          type="password"
+          name="senha"
+          autocomplete="new-password"
+          class="w-[329px] h-[60px] rounded-[50px] text-white bg-transparent border border-white placeholder-white font-bold text-lg px-8 focus:outline-neutral-50"
+          placeholder="Senha"
+        />
+        <input
+          type="password"
+          name="confimaSenha"
+          autocomplete="new-password"
+          class="w-[329px] h-[60px] rounded-[50px] text-white bg-transparent border border-white placeholder-white font-bold text-lg px-8 focus:outline-neutral-50"
+          placeholder="confirmar senha"
+        />
+
+        <div>
+          <button
+            type="submit"
+            class="w-[329px] h-[60px] rounded-[50px] bg-white text-orange-600 font-bold text-lg mt-9 mx-auto"
+          >
+            Fazer Cadastro
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-auth-compat.js"></script>
+    <script src="../js/cadastro.js"></script>
+  </body>
+</html>

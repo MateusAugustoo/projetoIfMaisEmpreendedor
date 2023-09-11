@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+</head>
+<body>
+    <div class="max-sm:bg-gradient-to-t from-orange-600 to-amber-400 absolute shadow flex-1 h-screen w-screen">
+
+        <div class="max-sm: flex mt-9 items-baseline">
+            <a
+              href="../telaDeEntrada.html"
+              class="w-[74px] h-1.5 text-white text-sm font-semibold ml-4"
+              >Cancelar</a
+            >
+            <h3 class="text-white text-xl font-bold w-[150px] mx-auto">
+            Entrar
+            </h3>
+          </div>
+
+        <img src="../images/imagem.png" alt="imagem de um prato de comida" class="w-[200] h-[250.04px] mx-auto mt-8 rotate-[70deg]">
+
+        <form action="" class="space-y-4 text-center mt-10 bg-gradient-to-t from-orange-600 to-amber-400" id="formLogin">
+
+            <input type="email" name="emailLogin" autocomplete="email" class="w-[329px] h-[60px] rounded-[50px] text-white  bg-transparent border border-white placeholder-white font-bold text-lg px-8 focus:outline-neutral-50" placeholder="Email">
+            <input type="password" name="senhaLogin" autocomplete="current-password" class="w-[329px] h-[60px] rounded-[50px] text-white  bg-transparent border border-white placeholder-white font-bold text-lg px-8 focus:outline-neutral-50" placeholder="Senha">
+
+            <a><p class="text-sm text-white font-medium mt-8">Esqueceu sua senha?</p></a>
+
+            <div>
+                <button type="submit" class="text-orange-600 bg-white w-[329px] h-[60px] flex justify-center items-center rounded-[50px] mx-auto font-bold mt-8">Entra</button>
+            </div>
+        </form>
+
+        <div class="flex justify-center items-center gap-2 mt-5">
+            <div class="border-white px-1 border-b w-36"></div> <p class=" text-white">ou</p> <div class="border-white px-1 border-b w-36"></div>
+        </div>
+
+        <!--Rede sociais-->
+        <div class="flex mt-9 justify-center gap-9">
+
+            <div class="w-[52px] h-[52px] relative" id="google">
+                <div class="w-[50px] h-[50px] left-[1px] top-[1px] absolute bg-white rounded-full"></div>
+                <img class="w-[52px] h-[52px] left-0 top-0 absolute" src="../images/google.png" />
+            </div>
+
+            <div class="w-[50px] h-[50px] relative">
+                <div class="w-[50px] h-[50px] left-0 top-0 absolute bg-white rounded-full"></div>
+                <img class="w-[50px] h-[50px] left-0 top-0 absolute" src="../images/facebook.png" />
+            </div>
+
+            <div class="w-[50px] h-[50px] relative">
+                <div class="w-[50px] h-[50px] left-0 top-0 absolute bg-gradient-to-b from-indigo-600 via-fuchsia-700 to-amber-200 rounded-full"></div>
+                <img class="w-[41px] h-[41px] left-[5px] top-[5px] absolute" src="../images/InstagramLogo.png" alt="">
+            </div>
+
+        </div>
+          
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-auth-compat.js"></script>
+    <script src="../js/login.js"></script>
+
+</body>
+</html>

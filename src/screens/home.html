@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-be">
+
+<head>
+    <link rel="stylesheet" href="../css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+</head>
+
+<body id="bodySlate" class="max-sm:min-h-screen flex flex-col bg-slate-100 w-screen h-screen relative">
+    <div id="menuButton">
+        <img src="../icons/menuBotão.svg" alt="" class="ml-7" id="menuBotão" />
+    </div>
+
+    <div id="drawer"
+        class="bg-orange-600 w-[77px] h-[691px] fixed top-0 left-0 transform -translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto rounded-[20px] mt-5">
+        <div>
+            <img id="closeMenu" src="../icons/botaoFecharMenu.svg" alt="" class="mt-9 mx-auto">
+        </div>
+
+
+        <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-auth-compat.js"></script>
+        <script src="../js/drawer.js"></script>
+        <script src="../js/logout.js"></script>
+</body>
+
+</html>
