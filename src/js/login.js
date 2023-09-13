@@ -1,10 +1,10 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyCJ0T4FEr8WLbUR77C0dfDdl-rNSbewusA",
-  authDomain: "projetoifmaisempreendedo-d1233.firebaseapp.com",
-  projectId: "projetoifmaisempreendedo-d1233",
-  storageBucket: "projetoifmaisempreendedo-d1233.appspot.com",
-  messagingSenderId: "22411014163",
-  appId: "1:22411014163:web:20024d6f5baefb74310fe6",
+  apiKey: "AIzaSyB_4mFz4i20ABV2MP9J5fN13cpafVhFIvI",
+  authDomain: "ifmaisempreendedor-e50d0.firebaseapp.com",
+  projectId: "ifmaisempreendedor-e50d0",
+  storageBucket: "ifmaisempreendedor-e50d0.appspot.com",
+  messagingSenderId: "62134980077",
+  appId: "1:62134980077:web:1dab28b6b12daaa24bebe4"
 };
 
 // Initialize Firebase
@@ -44,9 +44,6 @@ google.onclick = () => {
     console.log(error);
   })
 }
-
-
-
 
 
 
