@@ -1,10 +1,10 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyB_4mFz4i20ABV2MP9J5fN13cpafVhFIvI",
-  authDomain: "ifmaisempreendedor-e50d0.firebaseapp.com",
-  projectId: "ifmaisempreendedor-e50d0",
-  storageBucket: "ifmaisempreendedor-e50d0.appspot.com",
-  messagingSenderId: "62134980077",
-  appId: "1:62134980077:web:1dab28b6b12daaa24bebe4"
+  apiKey: "AIzaSyAAMYwMahCex-tSp-g7eEW5uENub_EmvMU",
+  authDomain: "ifmaisempreendedorangica-4cab5.firebaseapp.com",
+  projectId: "ifmaisempreendedorangica-4cab5",
+  storageBucket: "ifmaisempreendedorangica-4cab5.appspot.com",
+  messagingSenderId: "971295144283",
+  appId: "1:971295144283:web:35965497f0a0fe43b6427e"
 };
 
 // Initialize Firebase
