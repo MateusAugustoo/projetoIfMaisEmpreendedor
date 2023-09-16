@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer components {
+  .shadow-comida {
+    filter: drop-shadow(5px 5px 10px rgba(0 0 0 / 50%));
+  }
+  .input-radio {
+    @apply appearance-none w-12 h-10 bg-stone-300 rounded-lg shadow-xl transition duration-75 text-black font-medium;
+  }
+  .input-radio:checked{
+    @apply bg-orange-600;
+  }
+}
