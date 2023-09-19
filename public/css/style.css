@@ -609,6 +609,11 @@ video {
   top: 5px;
 }
 
+.mx-10 {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
 .mx-3 {
   margin-left: 0.75rem;
   margin-right: 0.75rem;
@@ -763,6 +768,10 @@ video {
 
 .w-80 {
   width: 20rem;
+}
+
+.w-\[10px\] {
+  width: 10px;
 }
 
 .w-\[150px\] {
@@ -976,10 +985,6 @@ video {
 
 .bg-80\% {
   background-size: 80%;
-}
-
-.bg-top-left {
-  background-position: 0px left;
 }
 
 .bg-right-top {
