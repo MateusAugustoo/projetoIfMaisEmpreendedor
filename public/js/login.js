@@ -32,19 +32,6 @@ formLogin.addEventListener("submit", function (event) {
 
 
 //Login Via Google
-const google = document.getElementById("google");
-const provider = new firebase.auth.GoogleAuthProvider();
-
-google.onclick = () => {
-  auth.signInWithPopup(provider).then((result) => {
-    console.log(result);
-    window.location.href = "../screens/home.html";
-  
-  }).catch((error) =>{
-    console.log(error);
-  })
-}
-
 
 
 //Login Via Facebook
