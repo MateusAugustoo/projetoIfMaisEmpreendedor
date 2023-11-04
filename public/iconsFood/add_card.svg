@@ -1,0 +1,22 @@
+<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 84">
+<g id="Ellipse 7" filter="url(#filter0_d_943_1411)">
+<circle cx="14.0029" cy="13" r="11" fill="#606264"/>
+</g>
+<path id="Line 6" d="M10.0029 13H18.0029" stroke="white" stroke-width="3" stroke-linecap="round"/>
+<path id="Line 7" d="M14.0029 17V9" stroke="white" stroke-width="3" stroke-linecap="round"/>
+</g>
+<defs>
+<filter id="filter0_d_943_1411" x="0.558485" y="0.166667" width="26.8889" height="26.8889" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feMorphology radius="0.611111" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_943_1411"/>
+<feOffset dy="0.611111"/>
+<feGaussianBlur stdDeviation="0.916667"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_943_1411"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_943_1411" result="shape"/>
+</filter>
+</defs>
+</svg>
