@@ -23,7 +23,14 @@ formLogin.addEventListener("submit", function (event) {
   auth
     .signInWithEmailAndPassword(email, senha)
     .then(() => {
-      window.location.href = "../screens/home.html";
+      const user = auth.currentUser;
+      const userId = user.uid;
+      console.log(userId);
+      auth.onAuthStateChanged((user) => {
+        if (user) {
+          window.location.href = `../screens/home.html?uid=${userId}`;
+        }
+      })
     })
     .catch(() => {
       alert("Email ou senha incorretos");
