@@ -21,6 +21,7 @@ function renderizarFavoritos(favoritos) {
         pizzaRef.get().then((doc) => {
             if (doc.exists) {
                 const pizzaData = doc.data()
+                const pizzaId = doc.id
 
                 const cardFavoritoPizza = document.createElement('div')
                 cardFavoritoPizza.className = 'w-[156px] h-[222px] relative mt-5'
@@ -31,7 +32,7 @@ function renderizarFavoritos(favoritos) {
                         class="px-3 w-[156px] top-[10px] absolute text-orange-600 text-xl font-semibold fontText tracking-wider flex justify-between">
                         ${pizzaData.sabor}
 
-                        <button id="iconeFavoritar" onclick="removerFavorito()">
+                        <button id="iconeFavoritar" onclick="removerFavorito(${pizzaId})">
                         <svg width="30" height="28" viewBox="0 0 46 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g filter="url(#filter0_d_873_1822)">
                             <path
@@ -85,41 +86,30 @@ auth.onAuthStateChanged(function (user) {
     }
 })
 
-function removerFavorito() {
+function removerFavorito(pizzaId) {
     auth.onAuthStateChanged(function (user) {
         if (user) {
             const userId = user.uid;
 
-            const pizzaRef = db.collection('Pizza').doc(userId)
-            pizzaRef.get().then((doc) => {
+            const favoritoRef = db.collection('Favoritos').doc(userId)
+
+            favoritoRef.get().then((doc) => {
                 if (doc.exists) {
-                    const pizzaData = doc.data()
-                    const pizzaId = doc.id
+                    const favoritosData = doc.data()
 
-                    const favoritoRef = db.collection('Favoritos').doc(userId)
+                    if (favoritosData.lanches.includes(pizzaId)) {
+                        favoritosData.lanches = favoritosData.lanches.filter((id) => id !== pizzaId);
 
-                    favoritoRef.get().then((doc) => {
-                        if (doc.exists) {
-                            const favoritosData = doc.data()
-
-                            if (favoritosData.lanches.includes(pizzaId)) {
-                                favoritosData.lanches = favoritosData.lanches.filter((id) => id !== pizzaId);
-
-                                favoritoRef.update({
-                                    lanches: favoritosData.lanches
-                                }).then(() => {
-                                    alert('Lanche removido dos favoritos!');
-                                }).catch((erro) => {
-                                    alert('Erro ao remover lanche dos favoritos!' + erro);
-                                });
-                            }
-                        }
-                    })
-
+                        favoritoRef.update({
+                            lanches: favoritosData.lanches
+                        }).then(() => {
+                            alert('Lanche removido dos favoritos!');
+                        }).catch((erro) => {
+                            alert('Erro ao remover lanche dos favoritos!' + erro);
+                        });
+                    }
                 }
             })
-
-
         }
     })
 }
