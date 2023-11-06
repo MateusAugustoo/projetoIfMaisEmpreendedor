@@ -35,25 +35,8 @@
     </header>
 
     <main>
-        <section id="#SectionPizza">
-            <div class=" text-zinc-600 text-xl font-semibold fontText ml-8 mt-5">Sabores de Pizza</div>
-
-            <div class="w-[333px] h-[142px] relative mx-8 mt-5">
-                <div class="w-[333px] h-[142px] left-0 top-0 absolute bg-white rounded-[20px] shadow"></div>
-                <div class="w-[142.86px] h-[142px] left-[190.14px] top-0 absolute bg-orange-600 rounded-[20px]"></div>
-                <div class="w-[78.47px] left-[14.08px] top-[108px] absolute text-center"><span
-                        class="text-amber-400 text-xl font-semibold fontText tracking-wide">R$ 21</span><span
-                        class="text-amber-400 text-sm font-semibold fontText tracking-wide">.99</span></div>
-                <div
-                    class="w-[134.81px] left-[22.13px] top-[15px] absolute text-orange-600 text-xl font-semibold fontText">
-                    Pizza Italiana</div>
-                <div
-                    class="w-[134.81px] left-[22.13px] top-[47px] absolute text-zinc-600 text-[7px] font-bold fontText">
-                    Massa de pizza, Molho de tomate, Queijo mozzarella, Azeite de oliva, Pepperoni, Funghi, Prosciutto,
-                    Salame,
-                    Margherita, Quatro queijos, Calabresa, Frutos do mar, Rúcula</div>
-            </div>
-        </section>
+        <div class=" text-zinc-600 text-xl font-semibold fontText ml-8 mt-5">Sabores de Pizza</div>
+        <section id="SectionPizza"></section>
 
         <section id="SectionHamburguer"></section>
         <section id="SectionDoces"></section>
@@ -68,7 +51,7 @@
         <div class="w-[54px] h-[55px] relative mx-auto mt-11">
             <div id="OpcaoPizzaFocus" class="button w-[54px] h-[55px]">
                 <div class="w-10 h-[38.47px] left-[7px] top-[10px] absolute">
-                    <a href="#SectionPizza" onclick="handleItemClick('OpcaoPizzaFocus')">
+                    <a href="#" onclick="handleItemClick('OpcaoPizzaFocus')">
                         <div>
                             <svg width="40" height="38" viewBox="0 0 46 44" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -100,7 +83,7 @@
         <div class="w-[54px] h-[55px] relative mx-auto mt-20">
             <div id="OptionHamburguer" class="button w-[54px] h-[55px]">
                 <div class="w-10 h-[38.47px] left-[7px] top-[10px] absolute">
-                    <a href="#" onclick="handleItemClick('OptionHamburguer')">
+                    <a href="#SectionHamburguer" onclick="handleItemClick('OptionHamburguer')">
                         <div>
                             <svg width="40" height="38" viewBox="0 0 46 41" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -263,6 +246,8 @@
 
 <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore-compat.js"></script>
+<script src="../js/renderProduct.js"></script>
 <script src="../js/drawer.js"></script>
 <!--<script src="../js/logout.js"></script> -->
 
