@@ -12,7 +12,7 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 function renderPizza() {
-    const sectionPizza = document.getElementById('SectionPizza')
+    const sectionPizza = document.getElementById('sectionPizza')
     const pizzasRef = db.collection('Pizza')
 
     pizzasRef.get().then((querySnapshot) => {

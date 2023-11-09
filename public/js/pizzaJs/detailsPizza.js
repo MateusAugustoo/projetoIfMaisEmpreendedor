@@ -121,12 +121,17 @@ window.onload = function () {
     })
 
     const favoritarButton = document.getElementById('favoritar')
+    const pathElement = favoritarButton.querySelectorAll('path')
 
     auth.onAuthStateChanged((user) => {
         if (user) {
             favoritarButton.addEventListener('click', () => {
                 const userId = user.uid
                 adicionarLancheAoFavorito(userId, pizzaId)
+
+                pathElement.forEach(pathElement => {
+                    pathElement.setAttribute('fill', 'red')
+                })
             })
         }
     })
