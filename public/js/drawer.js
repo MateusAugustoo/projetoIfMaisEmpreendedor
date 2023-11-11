@@ -16,31 +16,20 @@ function handleItemClick(itemId) {
   const items = document.querySelectorAll('.button');
 
   items.forEach(item => {
-    if (item.id === itemId) {
-      item.classList.add('bg-white', 'shadow', 'rounded-[40px]', 'left-0', 'top-0', 'absolute');
+    const isCurrentItem = item.id === itemId;
+    const svgElement = item.querySelector('svg');
+    const pathElements = svgElement ? svgElement.querySelectorAll('path') : [];
 
-      const svgElement = item.querySelector('svg');
+    item.classList.toggle('bg-white', isCurrentItem);
+    item.classList.toggle('shadow', isCurrentItem);
+    item.classList.toggle('rounded-[40px]', isCurrentItem);
+    item.classList.toggle('left-0', isCurrentItem);
+    item.classList.toggle('top-0', isCurrentItem);
+    item.classList.toggle('absolute', isCurrentItem);
 
-      if (svgElement) {
-        const pathElements = svgElement.querySelectorAll('path');
-
-        pathElements.forEach(pathElement => {
-          pathElement.setAttribute('stroke', '#D95A11')
-        })
-      }
-    } else {
-      item.classList.remove('bg-white', 'shadow', 'rounded-[40px]', 'left-0', 'top-0', 'absolute');
-
-      const svgElement = item.querySelector('svg');
-
-      if (svgElement) {
-        const pathElements = svgElement.querySelectorAll('path');
-
-        pathElements.forEach(pathElement => {
-          pathElement.setAttribute('stroke', 'white')
-        })
-      }
-    }
+    pathElements.forEach(pathElement => {
+      pathElement.setAttribute('stroke', isCurrentItem ? '#D95A11' : 'white');
+    });
   });
 }
 

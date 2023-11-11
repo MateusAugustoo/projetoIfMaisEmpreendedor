@@ -2,26 +2,12 @@
 <html lang="pt-be">
 
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../css/style.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
 
-    <style>
-        .fonteHeader {
-            font-family: 'Lobster', cursive;
-        }
-
-        .fontText {
-            font-family: 'Poppins', cursive;
-        }
-    </style>
 </head>
 
 <body id="bodySlate" class="max-sm:min-h-screen flex flex-col bg-slate-100 w-screen h-screen relative">
@@ -38,9 +24,15 @@
         <div class=" text-zinc-600 text-xl font-semibold fontText ml-8 mt-5">Sabores de Pizza</div>
         <section id="sectionPizza"></section>
 
-        <section id="SectionHamburguer"></section>
-        <section id="SectionDoces"></section>
-        <section id="SectionBebidas"></section>
+        <section id="sectionHamburguer">
+            <div class="sect">Nossos Hamburgueres</div>
+        </section>
+        <section id="sectionDoces">
+            Nossos Doces
+        </section>
+        <section id="sectionBebidas">
+            Nossos Doces
+        </section>
     </main>
 
     <div id="drawer"
@@ -49,9 +41,9 @@
         <div class="border-2 border-white w-[40px] mx-auto rounded mt-8 shadow"></div>
 
         <div class="w-[54px] h-[55px] relative mx-auto mt-11">
-            <div id="OpcaoPizzaFocus" class="button w-[54px] h-[55px]">
+            <div id="opcaoPizzaFocus" class="button w-[54px] h-[55px]" data-target="sectionPizza">
                 <div class="w-10 h-[38.47px] left-[7px] top-[10px] absolute">
-                    <a href="#" onclick="handleItemClick('OpcaoPizzaFocus')">
+                    <a href="#" onclick="handleItemClick('opcaoPizzaFocus')">
                         <div>
                             <svg width="40" height="38" viewBox="0 0 46 44" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -81,9 +73,9 @@
         </div>
 
         <div class="w-[54px] h-[55px] relative mx-auto mt-20">
-            <div id="OptionHamburguer" class="button w-[54px] h-[55px]">
+            <div id="optionHamburguer" class="button w-[54px] h-[55px]">
                 <div class="w-10 h-[38.47px] left-[7px] top-[10px] absolute">
-                    <a href="#SectionHamburguer" onclick="handleItemClick('OptionHamburguer')">
+                    <a href="#sectionHamburguer" onclick="handleItemClick('optionHamburguer')">
                         <div>
                             <svg width="40" height="38" viewBox="0 0 46 41" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -111,9 +103,9 @@
         </div>
 
         <div class="w-[54px] h-[55px] relative mx-auto mt-20">
-            <div id="OptionDoces" class="button w-[54px] h-[55px]">
+            <div id="optionDoces" class="button w-[54px] h-[55px]">
                 <div class="w-10 h-[38.47px] left-[7px] top-[10px] absolute">
-                    <a href="#" onclick="handleItemClick('OptionDoces')">
+                    <a href="#sectionDoces" onclick="handleItemClick('optionDoces')">
                         <div>
                             <svg width="40" height="38" viewBox="0 0 46 46" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -143,9 +135,9 @@
         </div>
 
         <div class="w-[54px] h-[55px] relative mx-auto mt-20">
-            <div id="OptionBebidas" class="button w-[54px] h-[55px]">
+            <div id="optionBebidas" class="button w-[54px] h-[55px]">
                 <div class="w-10 h-[38.47px] left-[7px] top-[10px] absolute">
-                    <a href="#" onclick="handleItemClick('OptionBebidas')">
+                    <a href="#" onclick="handleItemClick('optionBebidas')">
                         <div>
                             <svg width="40" height="38" viewBox="0 0 46 46" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">

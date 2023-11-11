@@ -165,8 +165,35 @@ function adicionarLancheAoFavorito(userId, pizzaId) {
     })
 }
 
+const adicionarPizza = document.getElementById('adicionarPizza')
+let quantidadePizza = document.getElementById('quantidadePizza').innerHTML = 0;
+const renoverPizza = document.getElementById('renoverPizza')
+
+function adicionarQuantidadePizza() {
+    quantidadePizza += 1;
+    document.getElementById('quantidadePizza').innerHTML = quantidadePizza;
+    localStorage.setItem('quantidadePizza', quantidadePizza)
+}
+
+function renoverQuantidadePizza() {
+    if (quantidadePizza > 0) {
+        quantidadePizza -= 1;
+        document.getElementById('quantidadePizza').innerHTML = quantidadePizza;
+
+    }
+    localStorage.setItem('quantidadePizza', quantidadePizza)
+}
+
+function valorQuantidade() {
+    quantidadePizza = parseInt(localStorage.getItem('quantidadePizza'))
+}
+
+window.addEventListener('load', () => {
+    localStorage.removeItem('quantidadePizza')
+})
+
 const arrowBackHome = document.getElementById('arrow-back-home')
 arrowBackHome.addEventListener('click', () => {
-    window.location.href = '../screens/home.html'
+    history.back();
 })
 

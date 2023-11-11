@@ -2,10 +2,19 @@
 ! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;700&display=swap');
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
+
+.fontText{
+  font-family: 'Poppins', sans-serif;
+}
+
+.fonteHeader{
+  font-family: 'Lobster', cursive;
+}
 
 *,
 ::before,
@@ -591,6 +600,10 @@ video {
   bottom: 4rem;
 }
 
+.bottom-4 {
+  bottom: 1rem;
+}
+
 .bottom-7 {
   bottom: 1.75rem;
 }
@@ -667,6 +680,10 @@ video {
   top: 5px;
 }
 
+.m-auto {
+  margin: auto;
+}
+
 .mx-10 {
   margin-left: 2.5rem;
   margin-right: 2.5rem;
@@ -685,6 +702,10 @@ video {
 .my-7 {
   margin-top: 1.75rem;
   margin-bottom: 1.75rem;
+}
+
+.mb-16 {
+  margin-bottom: 4rem;
 }
 
 .ml-4 {
@@ -709,6 +730,10 @@ video {
 
 .mt-11 {
   margin-top: 2.75rem;
+}
+
+.mt-16 {
+  margin-top: 4rem;
 }
 
 .mt-2 {
@@ -790,8 +815,16 @@ video {
   height: 222px;
 }
 
+.h-\[22px\] {
+  height: 22px;
+}
+
 .h-\[250\.04px\] {
   height: 250.04px;
+}
+
+.h-\[310px\] {
+  height: 310px;
 }
 
 .h-\[38\.47px\] {
@@ -844,6 +877,10 @@ video {
 
 .w-28 {
   width: 7rem;
+}
+
+.w-3 {
+  width: 0.75rem;
 }
 
 .w-36 {
@@ -902,6 +939,14 @@ video {
   width: 200;
 }
 
+.w-\[236px\] {
+  width: 236px;
+}
+
+.w-\[294px\] {
+  width: 294px;
+}
+
 .w-\[329px\] {
   width: 329px;
 }
@@ -910,12 +955,20 @@ video {
   width: 333px;
 }
 
+.w-\[350px\] {
+  width: 350px;
+}
+
 .w-\[40px\] {
   width: 40px;
 }
 
 .w-\[41px\] {
   width: 41px;
+}
+
+.w-\[42px\] {
+  width: 42px;
 }
 
 .w-\[50px\] {
@@ -1020,6 +1073,10 @@ video {
   gap: 0.5rem;
 }
 
+.gap-3 {
+  gap: 0.75rem;
+}
+
 .gap-5 {
   gap: 1.25rem;
 }
@@ -1056,6 +1113,10 @@ video {
 
 .rounded-2xl {
   border-radius: 1rem;
+}
+
+.rounded-\[10px\] {
+  border-radius: 10px;
 }
 
 .rounded-\[15px\] {
@@ -1224,6 +1285,10 @@ video {
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.text-\[28px\] {
+  font-size: 28px;
 }
 
 .text-\[7px\] {
