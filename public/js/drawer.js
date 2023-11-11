@@ -31,5 +31,8 @@ function handleItemClick(itemId) {
       pathElement.setAttribute('stroke', isCurrentItem ? '#D95A11' : 'white');
     });
   });
+
+  const section = document.getElementById(itemId + '-section');
+  section.scrollIntoView({ behavior: 'smooth' });
 }
 
