@@ -2,17 +2,30 @@
 <html lang="en">
 
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    .fontText {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .fonteHeader {
+        font-family: 'Lobster', cursive;
+    }
+</style>
     <title>Detalhes</title>
 </head>
 
 <body class="max-sm: bg-slate-100 text-orange-600 px-8 py-5 overflow-y-auto fontText">
     <header>
         <div class="flex flex-row justify-between">
-            <img src="../iconsFood/voltar.svg" alt="icone de volta a tela anterior">
-            <div class="text-orange-600 text-3xl font-bold fontText">Steack Duplo</div>
+            <img id="arrowBackPage" src="../iconsFood/voltar.svg" alt="icone de volta a tela anterior">
+            <div class="text-orange-600 text-3xl font-bold fontText" id="nomeHamburguer"></div>
 
             <div id="favoritar">
                 <svg width="46" height="42" viewBox="0 0 46 42" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,7 +58,9 @@
     </header>
 
     <main>
-        <div class="w-[350px] h-[310px] mx-auto mt-16"></div>
+        <div class="w-[350px] h-[310px] mx-auto mt-16">
+            <img src="" alt="" id="imageHamburguer">
+        </div>
 
         <div class="w-[236px] h-[52px] bg-white shadow rounded-[20px] m-auto flex justify-around items-center mt-11">
             <button>
@@ -66,15 +81,13 @@
 
         <div class="mt-10 flex flex-col gap-3">
             <p class="text-orange-600 text-xl font-bold fontText">Ingredientes</p>
-            <p class="text-zinc-600 text-sm font-bold fontText w-[294px] mb-16">Pão de hamburguer, molho da casa, 2
-                carnes de
-                hamburguer, queijo cheddar, bacon, cebola, tomate, alface, frango</p>
+            <p class="text-zinc-600 text-sm font-bold fontText w-[294px] mb-16" id="ingredientesHamburguer"></p>
         </div>
 
         <div class="flex justify-between relative bottom-4">
-            <p class="font-bold fontText text-[28px]">R$ <span>0</span></p>
+            <p class="font-bold fontText text-[28px]" id="precoHamburguer"></p>
             <button
-                class="bg-orange-600 text-white w-52 h-11 rounded-[15px] shadow flex items-center px-5 gap-2 text-xs font-bold fontText">
+                class="bg-orange-600 text-white w-52 h-11 rounded-[15px] shadow flex items-center px-5 justify-around text-xs font-bold fontText">
                 <svg width="25" height="22" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="carrinho">
                         <path id="Vector"
@@ -98,4 +111,8 @@
     </main>
 </body>
 
+<script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore-compat.js"></script>
+<script src="../js/hamburguerJs/detailsHamburguer.js"></script>
 </html>

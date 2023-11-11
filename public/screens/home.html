@@ -2,15 +2,27 @@
 <html lang="pt-be">
 
 <head>
-
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
     <title>Home</title>
+
+    <style>
+        .fontText {
+            font-family: 'Poppins', sans-serif;
+        }
+    
+        .fonteHeader {
+            font-family: 'Lobster', cursive;
+        }
+    </style>
 
 </head>
 
-<body id="bodySlate" class="max-sm:min-h-screen flex flex-col bg-slate-100 w-screen h-screen relative">
+<body id="bodySlate" class="max-sm:min-h-screen flex flex-col bg-slate-100 w-screen h-screen relative text-orange-600">
 
     <header class="flex justify-between align-baseline mt-8 items-center">
         <img src="../iconsDrawer/drawer.svg" alt="" class="ml-7 cursor-pointer" id="menuButton" />
@@ -21,17 +33,17 @@
     </header>
 
     <main>
-        <div class=" text-zinc-600 text-xl font-semibold fontText ml-8 mt-5">Sabores de Pizza</div>
-        <section id="sectionPizza"></section>
-
-        <section id="sectionHamburguer">
-            <div class="sect">Nossos Hamburgueres</div>
+        <section id="sectionPizza" class="mt-5">
+            <div class=" text-zinc-600 text-xl font-semibold fontText ml-8">Sabores de Pizza</div>
         </section>
-        <section id="sectionDoces">
-            Nossos Doces
+        <section id="sectionHamburguer" class="mt-5">
+            <div class=" text-zinc-600 text-xl font-semibold fontText ml-8 mb-6">Sabores de Hamburguer</div>
         </section>
-        <section id="sectionBebidas">
-            Nossos Doces
+        <section id="sectionDoces" class="mt-5">
+            <div class=" text-zinc-600 text-xl font-semibold fontText ml-8">Sabores de Doces</div>
+        </section>
+        <section id="sectionBebidas" class="mt-5">
+            <div class=" text-zinc-600 text-xl font-semibold fontText ml-8">Sabores de Bebidas</div>
         </section>
     </main>
 
@@ -239,7 +251,7 @@
 <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore-compat.js"></script>
-<script src="../js/pizzaJs/renderProduct.js"></script>
+<script src="../js/renderProduct.js"></script>
 <script src="../js/drawer.js"></script>
 <!--<script src="../js/logout.js"></script> -->
 
