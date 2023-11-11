@@ -2,19 +2,10 @@
 ! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;700&display=swap');
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
-
-.fontText{
-  font-family: 'Poppins', sans-serif;
-}
-
-.fonteHeader{
-  font-family: 'Lobster', cursive;
-}
 
 *,
 ::before,
@@ -620,12 +611,24 @@ video {
   left: 8rem;
 }
 
+.left-\[10px\] {
+  left: 10px;
+}
+
+.left-\[118px\] {
+  left: 118px;
+}
+
 .left-\[12px\] {
   left: 12px;
 }
 
 .left-\[14\.08px\] {
   left: 14.08px;
+}
+
+.left-\[16px\] {
+  left: 16px;
 }
 
 .left-\[190\.14px\] {
@@ -638,6 +641,10 @@ video {
 
 .left-\[22\.13px\] {
   left: 22.13px;
+}
+
+.left-\[35px\] {
+  left: 35px;
 }
 
 .left-\[5px\] {
@@ -664,12 +671,28 @@ video {
   top: 111px;
 }
 
+.top-\[140px\] {
+  top: 140px;
+}
+
 .top-\[15px\] {
   top: 15px;
 }
 
+.top-\[178px\] {
+  top: 178px;
+}
+
+.top-\[185px\] {
+  top: 185px;
+}
+
 .top-\[1px\] {
   top: 1px;
+}
+
+.top-\[20px\] {
+  top: 20px;
 }
 
 .top-\[47px\] {
@@ -689,6 +712,11 @@ video {
   margin-right: 2.5rem;
 }
 
+.mx-7 {
+  margin-left: 1.75rem;
+  margin-right: 1.75rem;
+}
+
 .mx-8 {
   margin-left: 2rem;
   margin-right: 2rem;
@@ -706,6 +734,10 @@ video {
 
 .mb-16 {
   margin-bottom: 4rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
 }
 
 .ml-4 {
@@ -803,8 +835,16 @@ video {
   height: 111px;
 }
 
+.h-\[116\.21px\] {
+  height: 116.21px;
+}
+
 .h-\[142px\] {
   height: 142px;
+}
+
+.h-\[15px\] {
+  height: 15px;
 }
 
 .h-\[205\.04px\] {
@@ -821,6 +861,10 @@ video {
 
 .h-\[250\.04px\] {
   height: 250.04px;
+}
+
+.h-\[25px\] {
+  height: 25px;
 }
 
 .h-\[310px\] {
@@ -915,6 +959,10 @@ video {
   width: 132px;
 }
 
+.w-\[134\.80px\] {
+  width: 134.80px;
+}
+
 .w-\[134\.81px\] {
   width: 134.81px;
 }
@@ -925,6 +973,10 @@ video {
 
 .w-\[150px\] {
   width: 150px;
+}
+
+.w-\[155px\] {
+  width: 155px;
 }
 
 .w-\[156px\] {
@@ -941,6 +993,10 @@ video {
 
 .w-\[236px\] {
   width: 236px;
+}
+
+.w-\[25px\] {
+  width: 25px;
 }
 
 .w-\[294px\] {
@@ -991,6 +1047,10 @@ video {
   width: 77px;
 }
 
+.w-\[86px\] {
+  width: 86px;
+}
+
 .w-\[90\.47px\] {
   width: 90.47px;
 }
@@ -1001,6 +1061,14 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-5 {
+  width: 1.25rem;
+}
+
+.w-56 {
+  width: 14rem;
 }
 
 .flex-1 {
@@ -1341,6 +1409,11 @@ video {
 
 .tracking-widest {
   letter-spacing: 0.1em;
+}
+
+.text-amber-400 {
+  --tw-text-opacity: 1;
+  color: rgb(251 191 36 / var(--tw-text-opacity));
 }
 
 .text-orange-600 {
