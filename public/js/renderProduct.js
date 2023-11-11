@@ -11,99 +11,99 @@ firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
 
-function renderPizza() {
+async function renderPizza() {
     const sectionPizza = document.getElementById('sectionPizza');
     const pizzasRef = db.collection('Pizza');
 
-    pizzasRef.get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            const pizzaData = doc.data();
-            const pizzaId = doc.id;
+    const querySnapshot = await pizzasRef.get();
+    querySnapshot.forEach((doc) => {
+        const pizzaData = doc.data();
+        const pizzaId = doc.id;
 
-            const pizzaElement = document.createElement('div');
-            pizzaElement.className = 'w-[333px] h-[142px] relative mx-8 mt-5';
+        const pizzaElement = document.createElement('div');
+        pizzaElement.className = 'w-[333px] h-[142px] relative mx-8 mt-5';
 
-            const pizzaBackground = document.createElement('div');
-            pizzaBackground.className = 'w-[333px] h-[142px] left-0 top-0 absolute bg-white rounded-[20px] shadow';
-            pizzaElement.appendChild(pizzaBackground);
+        const pizzaBackground = document.createElement('div');
+        pizzaBackground.className = 'w-[333px] h-[142px] left-0 top-0 absolute bg-white rounded-[20px] shadow';
+        pizzaElement.appendChild(pizzaBackground);
 
-            const pizzaCircle = document.createElement('div');
-            pizzaCircle.className = 'w-[142.86px] h-[142px] left-[190.14px] top-0 absolute bg-orange-600 rounded-[20px]';
-            pizzaElement.appendChild(pizzaCircle);
+        const pizzaCircle = document.createElement('div');
+        pizzaCircle.className = 'w-[142.86px] h-[142px] left-[190.14px] top-0 absolute bg-orange-600 rounded-[20px]';
+        pizzaElement.appendChild(pizzaCircle);
 
-            const pizzaPrice = document.createElement('div');
-            pizzaPrice.className = 'w-[90.47px] left-[14.08px] top-[108px] absolute text-center';
-            pizzaElement.appendChild(pizzaPrice);
+        const pizzaPrice = document.createElement('div');
+        pizzaPrice.className = 'w-[90.47px] left-[14.08px] top-[108px] absolute text-center';
+        pizzaElement.appendChild(pizzaPrice);
 
-            const pizzaFlavor = document.createElement('div');
-            pizzaFlavor.className = 'w-[134.81px] left-[22.13px] top-[15px] absolute text-orange-600 text-xl font-semibold fontText';
-            pizzaFlavor.textContent = pizzaData.sabor;
-            pizzaElement.appendChild(pizzaFlavor);
+        const pizzaFlavor = document.createElement('div');
+        pizzaFlavor.className = 'w-[134.81px] left-[22.13px] top-[15px] absolute text-orange-600 text-xl font-semibold fontText';
+        pizzaFlavor.textContent = pizzaData.sabor;
+        pizzaElement.appendChild(pizzaFlavor);
 
-            const pizzaIngredients = document.createElement('div');
-            pizzaIngredients.className = 'w-[134.81px] left-[22.13px] top-[47px] absolute text-zinc-600 text-[7px] font-bold fontText';
-            pizzaIngredients.textContent = pizzaData.ingrediente;
-            pizzaElement.appendChild(pizzaIngredients);
+        const pizzaIngredients = document.createElement('div');
+        pizzaIngredients.className = 'w-[134.81px] left-[22.13px] top-[47px] absolute text-zinc-600 text-[7px] font-bold fontText';
+        pizzaIngredients.textContent = pizzaData.ingrediente;
+        pizzaElement.appendChild(pizzaIngredients);
 
-            sectionPizza.appendChild(pizzaElement);
+        sectionPizza.appendChild(pizzaElement);
 
-            pizzaElement.addEventListener('click', () => {
-                window.location.href = `../pagesProdutos/detalhesPizza.html?pizzaid=${pizzaId}`;
-            });
+        pizzaElement.addEventListener('click', () => {
+            window.location.href = `../pagesProdutos/detalhesPizza.html?pizzaid=${pizzaId}`;
         });
     });
 }
 
-renderPizza();
+await renderPizza();
 
 
-function renderHamburguer() {
+async function renderHamburguer() {
     const sectionHamburguer = document.getElementById('sectionHamburguer');
     const hamburguersRef = db.collection('Hamburguer');
 
-    hamburguersRef.get().then((querySnapshot)=>{
-        querySnapshot.forEach((doc)=>{
-            hamburguerData = doc.data();
-            hamburguerId = doc.id;
+    const querySnapshot = await hamburguersRef.get();
+    querySnapshot.forEach((doc)=>{
+        hamburguerData = doc.data();
+        hamburguerId = doc.id;
 
-            const hamburguerElement = document.createElement('div');
-            hamburguerElement.className = 'w-[155px] h-[222px] relative bg-white shadow rounded-xl mx-7';
+        const hamburguerElement = document.createElement('div');
+        hamburguerElement.className = 'w-[155px] h-[222px] relative bg-white shadow rounded-xl mx-7';
 
-            const hamburguerImage = document.createElement('img');
-            hamburguerImage.classList = 'w-[134.80px] h-[116.21px] left-[10px] top-[20px] absolute'
-            hamburguerImage.src = hamburguerData.pathPhoto;
-            hamburguerElement.appendChild(hamburguerImage);
+        const hamburguerImage = document.createElement('img');
+        hamburguerImage.classList = 'w-[134.80px] h-[116.21px] left-[10px] top-[20px] absolute'
+        hamburguerImage.src = hamburguerData.pathPhoto;
+        hamburguerElement.appendChild(hamburguerImage);
 
-            const hamburguerName = document.createElement('p');
-            hamburguerName.className = 'w-[86px] h-[15px] left-[35px] top-[140px] absolute text-center text-xl font-semibold fontText';
-            hamburguerName.textContent = hamburguerData.nome;
-            hamburguerElement.appendChild(hamburguerName);
+        const hamburguerName = document.createElement('p');
+        hamburguerName.className = 'w-[86px] h-[15px] left-[35px] top-[140px] absolute text-center text-xl font-semibold fontText';
+        hamburguerName.textContent = hamburguerData.nome;
+        hamburguerElement.appendChild(hamburguerName);
 
-            const hamburguerPriceDiv = document.createElement('div');
-            hamburguerPriceDiv.className = 'left-[16px] top-[178px] absolute text-center ';
-            const hamburguerPrice = document.createElement('p');
-            hamburguerPrice.className ='text-amber-400 text-xl font-semibold fontText';
-            hamburguerPrice.textContent = `R$ ${hamburguerData.preco}`;
+        const hamburguerPriceDiv = document.createElement('div');
+        hamburguerPriceDiv.className = 'left-[16px] top-[178px] absolute text-center ';
+        const hamburguerPrice = document.createElement('p');
+        hamburguerPrice.className ='text-amber-400 text-xl font-semibold fontText';
+        hamburguerPrice.textContent = `R$ ${hamburguerData.preco}`;
 
-            hamburguerPriceDiv.appendChild(hamburguerPrice);
-            hamburguerElement.appendChild(hamburguerPriceDiv);
+        hamburguerPriceDiv.appendChild(hamburguerPrice);
+        hamburguerElement.appendChild(hamburguerPriceDiv);
 
-            const iconAddFirstDiv = document.createElement('div');
-            iconAddFirstDiv.className = 'w-[25px] h-[25px] left-[118px] top-[185px] absolute';
-            const iconAddSecondDiv = document.createElement('div');
-            iconAddSecondDiv.className = 'w-[25px] h-[25px] left-0 top-0 absolute'
-            const iconAdd = document.createElement('img');
-            iconAdd.src = '../iconsFood/add_roudond.svg';
+        const iconAddFirstDiv = document.createElement('div');
+        iconAddFirstDiv.className = 'w-[25px] h-[25px] left-[118px] top-[185px] absolute';
+        const iconAddSecondDiv = document.createElement('div');
+        iconAddSecondDiv.className = 'w-[25px] h-[25px] left-0 top-0 absolute'
+        const iconAdd = document.createElement('img');
+        iconAdd.src = '../iconsFood/add_roudond.svg';
 
-            iconAddSecondDiv.appendChild(iconAdd);
-            iconAddFirstDiv.appendChild(iconAddSecondDiv);
-            hamburguerElement.appendChild(iconAddFirstDiv);
+        iconAddSecondDiv.appendChild(iconAdd);
+        iconAddFirstDiv.appendChild(iconAddSecondDiv);
+        hamburguerElement.appendChild(iconAddFirstDiv);
 
-            sectionHamburguer.appendChild(hamburguerElement);
+        sectionHamburguer.appendChild(hamburguerElement);
 
-            hamburguerElement.addEventListener('click', () => {
-                window.location.href = `../pagesProdutos/detalhesHamburguer.html?hamburguerid=${hamburguerId}`;
-            });
-        })
-    })
-}renderHamburguer();
+        hamburguerElement.addEventListener('click', () => {
+            window.location.href = `../pagesProdutos/detalhesHamburguer.html?hamburguerid=${hamburguerId}`;
+        });
+    });
+}
+
+renderHamburguer();
