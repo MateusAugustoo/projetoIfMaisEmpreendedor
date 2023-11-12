@@ -643,8 +643,8 @@ video {
   left: 22.13px;
 }
 
-.left-\[35px\] {
-  left: 35px;
+.left-\[294px\] {
+  left: 294px;
 }
 
 .left-\[5px\] {
@@ -701,6 +701,30 @@ video {
 
 .top-\[5px\] {
   top: 5px;
+}
+
+.left-\[188px\] {
+  left: 188px;
+}
+
+.top-\[13px\] {
+  top: 13px;
+}
+
+.left-\[23px\] {
+  left: 23px;
+}
+
+.top-\[26px\] {
+  top: 26px;
+}
+
+.left-\[190px\] {
+  left: 190px;
+}
+
+.top-\[76px\] {
+  top: 76px;
 }
 
 .m-auto {
@@ -831,6 +855,10 @@ video {
   height: 2.25rem;
 }
 
+.h-\[100px\] {
+  height: 100px;
+}
+
 .h-\[111px\] {
   height: 111px;
 }
@@ -907,8 +935,20 @@ video {
   height: 85px;
 }
 
+.h-full {
+  height: 100%;
+}
+
 .h-screen {
   height: 100vh;
+}
+
+.h-\[30px\] {
+  height: 30px;
+}
+
+.h-\[152px\] {
+  height: 152px;
 }
 
 .w-10 {
@@ -967,8 +1007,16 @@ video {
   width: 134.81px;
 }
 
+.w-\[137px\] {
+  width: 137px;
+}
+
 .w-\[142\.86px\] {
   width: 142.86px;
+}
+
+.w-\[149\.81px\] {
+  width: 149.81px;
 }
 
 .w-\[150px\] {
@@ -991,6 +1039,10 @@ video {
   width: 200;
 }
 
+.w-\[22px\] {
+  width: 22px;
+}
+
 .w-\[236px\] {
   width: 236px;
 }
@@ -1005,6 +1057,10 @@ video {
 
 .w-\[329px\] {
   width: 329px;
+}
+
+.w-\[331px\] {
+  width: 331px;
 }
 
 .w-\[333px\] {
@@ -1047,10 +1103,6 @@ video {
   width: 77px;
 }
 
-.w-\[86px\] {
-  width: 86px;
-}
-
 .w-\[90\.47px\] {
   width: 90.47px;
 }
@@ -1063,12 +1115,28 @@ video {
   width: 100vw;
 }
 
-.w-5 {
-  width: 1.25rem;
+.w-\[2px\] {
+  width: 2px;
 }
 
-.w-56 {
-  width: 14rem;
+.w-\[30px\] {
+  width: 30px;
+}
+
+.w-\[133px\] {
+  width: 133px;
+}
+
+.w-\[179px\] {
+  width: 179px;
+}
+
+.w-\[175px\] {
+  width: 175px;
+}
+
+.w-\[122px\] {
+  width: 122px;
 }
 
 .flex-1 {
@@ -1157,6 +1225,10 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+
+.overflow-auto {
+  overflow: auto;
 }
 
 .overflow-hidden {
@@ -1333,6 +1405,10 @@ video {
   padding-bottom: 1.75rem;
 }
 
+.pb-24 {
+  padding-bottom: 6rem;
+}
+
 .pt-2 {
   padding-top: 0.5rem;
 }
@@ -1343,6 +1419,10 @@ video {
 
 .align-baseline {
   vertical-align: baseline;
+}
+
+.font-\[\'Poppins\'\] {
+  font-family: 'Poppins';
 }
 
 .text-2xl {
@@ -1387,6 +1467,10 @@ video {
   line-height: 1rem;
 }
 
+.text-\[13px\] {
+  font-size: 13px;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -1409,6 +1493,10 @@ video {
 
 .tracking-widest {
   letter-spacing: 0.1em;
+}
+
+.tracking-wide {
+  letter-spacing: 0.025em;
 }
 
 .text-amber-400 {
