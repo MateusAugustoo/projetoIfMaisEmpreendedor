@@ -61,14 +61,14 @@ const quantSaborPizzaM = 2, quantSaborPizzaG = 2
 const quantSaborPizzaGG = 3
 
 
+const precoPizzaRefDb = db.collection('PrecoPizzas')
+const fromPizza = document.getElementById('formPizza')
+let precoPizza = document.getElementById('precoPizza')
+let quantidadeFatias = document.getElementById('quantidadeFatias')
+let quantidadesSabor = document.getElementById('quantidadeSabor')
+let quantidadePizza = document.getElementById('quantidadePizza').innerHTML = 0;
+
 async function precoAndFatias() {
-    const precoPizzaRefDb = db.collection('PrecoPizzas')
-    const fromPizza = document.getElementById('formPizza')
-    let precoPizza = document.getElementById('precoPizza')
-
-    let quantidadeFatias = document.getElementById('quantidadeFatias')
-    let quantidadesSabor = document.getElementById('quantidadeSabor')
-
     await precoPizzaRefDb.get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             const precoPizzaDb = doc.data()
@@ -165,10 +165,6 @@ function adicionarLancheAoFavorito(userId, pizzaId) {
     })
 }
 
-const adicionarPizza = document.getElementById('adicionarPizza')
-let quantidadePizza = document.getElementById('quantidadePizza').innerHTML = 0;
-const renoverPizza = document.getElementById('renoverPizza')
-
 function adicionarQuantidadePizza() {
     quantidadePizza += 1;
     document.getElementById('quantidadePizza').innerHTML = quantidadePizza;
@@ -184,16 +180,45 @@ function renoverQuantidadePizza() {
     localStorage.setItem('quantidadePizza', quantidadePizza)
 }
 
-function valorQuantidade() {
-    quantidadePizza = parseInt(localStorage.getItem('quantidadePizza'))
-}
-
-window.addEventListener('load', () => {
-    localStorage.removeItem('quantidadePizza')
-})
-
 const arrowBackHome = document.getElementById('arrow-back-home')
 arrowBackHome.addEventListener('click', () => {
     history.back();
 })
 
+fromPizza.addEventListener('submit', (e) => {
+    e.preventDefault();
+    adicionarAoCarrinho();
+});
+
+function adicionarAoCarrinho() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const pizzaId = urlParams.get('pizzaid');
+    const nomeDaPizza = document.getElementById('nomeDaPizza').textContent;
+    const quantidadePizza = parseInt(document.getElementById('quantidadePizza').textContent);
+    const precoPizza = parseFloat(document.getElementById('precoPizza').textContent.replace(',', '.'));
+    const tamanhoPizza = document.querySelector('input[name="tamanhoComida"]:checked').value;
+
+    const pizza = {
+        id: pizzaId,
+        nome: nomeDaPizza,
+        quantidade: quantidadePizza,
+        preco: precoPizza,
+        tamanho: tamanhoPizza
+    };
+
+    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+    const index = carrinho.findIndex(item => item.id === pizzaId);
+    if (index !== -1) {
+        carrinho[index].quantidade += quantidadePizza;
+    } else {
+        carrinho.push(pizza);
+    }
+
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+}
+
+fromPizza.addEventListener('submit', (e) => {
+    e.preventDefault();
+    adicionarAoCarrinho();
+});
