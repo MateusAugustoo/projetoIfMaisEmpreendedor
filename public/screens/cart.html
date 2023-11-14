@@ -4,17 +4,52 @@
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css" />
 
     <style>
         .fontText {
             font-family: 'Poppins', sans-serif;
         }
-    
+
         .fonteHeader {
             font-family: 'Lobster', cursive;
         }
+
+        .checkbox-wrapper {
+            position: relative;
+        }
+
+        .checkbox-wrapper label {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .checkbox-wrapper input {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+
+            opacity: 0;
+        }
+
+        .checkbox-wrapper label::before {
+            content: "";
+            width: 24px;
+            height: 24px;
+
+            border-radius: 8px;
+            border: 1px solid #d95a11;
+        }
+
+        .checkbox-wrapper input:checked+label::before {
+            background-image: url("../images/checkbox.svg");
+        }
+
+        
     </style>
 
     <meta charset="UTF-8" />
@@ -25,58 +60,30 @@
 <body id="bodySlate" class="max-sm:min-h-screen flex flex-col bg-slate-100 w-screen h-screen relative">
 
     <header class="flex justify-between align-baseline mt-8 items-center">
-        <h1 class="text-3xl fonteHeader mx-auto bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-amber-400">
+        <h1
+            class="text-3xl fonteHeader mx-auto bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-amber-400">
             Pizzaria Ramos</h1>
     </header>
 
 
     <main>
         <h2 class="text-zinc-600 text-xl font-semibold fontText mt-6 ml-8">Carrinho</h2>
-    
-        <div id=""></div>
-    
-        <div class="w-[363px] h-[293px] relative mx-auto mt-4 px-5">
-            <div class="w-[363px] h-auto left-0 top-0 absolute bg-yellow-100 py-6 border border-orange-600">
-                <div class="flex justify-around">
-                    <p class="relative text-zinc-600 text-xs font-extrabold uppercase tracking-wide">Descrição</p>
-                    <p class="relative text-zinc-600 text-xs font-extrabold uppercase tracking-wide">Quantidade</p>
-                    <p class="relative text-zinc-600 text-xs font-extrabold uppercase tracking-wide">valor</p>
+
+        <section id="carrinho-card"></section>
+
+        <div class="flex fixed w-full bottom-0 mb-24 mx-5 gap-3">
+            <button class="opacity-80 w-[157px] h-[59px] relative" onclick="excluirLanche()">
+                <div class="w-[157px] h-[59px] left-0 top-0 absolute rounded-[15px] shadow border-2 border-zinc-600">
+                    <p class="left-[26.80px] top-[18px] absolute text-zinc-600 text-base font-bold fontText">Remover
+                        <span>(0)</span>
+                    </p>
                 </div>
+            </button>
 
-                <section id="section-lanches">
-                </section>
-                
-                <div class="w-[319px] h-[1px] bg-gray-500 mx-auto mt-4"></div>
-
-                <div class="px-5 mt-5 mb-5 flex flex-col gap-3">
-                    <div class="flex justify-between">
-                        <p class="text-zinc-600 text-[12px] font-semibold tracking-wider">Sub Total</p>
-                        <p id="p-subtotal" class="text-right text-gray-800 text-xs font-bold"></p>
-                    </div>
-                    <div class="flex justify-between">
-                        <p class="text-zinc-600 text-[12px] font-semibold tracking-wider">Taxa de Entrega</p>
-                        <p id="p-taxa" class="text-right text-gray-800 text-xs font-bold"></p>
-                    </div>
-                    
-                </div>
-
-                <div class="w-[319px] h-[1px] bg-gray-500 mx-auto"></div>
-                
-                <div class="relative mt-5 px-5">
-                    <div class="flex justify-between">
-                        <p class="text-gray-800 text-xs font-semibold tracking-wide">Total<spam
-                                class="text-zinc-600 text-xs font-semibold tracking-wide"> (R$)</spam>
-                        </p>
-
-                        <p id="p-total-pagamento" class="text-right text-orange-600 text-lg font-extrabold"></p>
-                    </div>
-                </div>
-            </div>
+            <button class="w-[200px] h-[59px] bg-orange-600 rounded-2xl shadow text-white font-bold fontText text-base">
+                Finalizar Compras!
+            </button>
         </div>
-
-        <button class="">
-
-        </button>
     </main>
 
 
@@ -150,8 +157,10 @@
 
 </body>
 
+
 <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore-compat.js"></script>
 <script src="../js/renderCarrinho.js"></script>
 
 <!--<script src="../js/logout.js"></script> -->

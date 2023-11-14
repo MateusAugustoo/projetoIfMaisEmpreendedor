@@ -47,7 +47,7 @@ function renderizarFavoritos(favoritos) {
                 cardFavoritoPizza.className = 'w-[156px] h-[222px] relative mt-5'
                 cardFavoritoPizza.id = 'cardFavoritoPizza'
 
-                cardFavoritoPizza.innerHTML = `
+                const cardFavoritoPizzaContent = `
                     <div class="w-[156px] h-[222px] left-0 top-0 absolute bg-white rounded-[15px] shadow">
                         <div class="px-3 w-[156px] top-[10px] absolute text-orange-600 text-xl font-semibold fontText tracking-wider flex justify-between">
                             ${pizzaData.sabor}
@@ -76,6 +76,8 @@ function renderizarFavoritos(favoritos) {
                         </div>
                     </div>
                 `;
+
+                cardFavoritoPizza.innerHTML = cardFavoritoPizzaContent;
 
                 cardFavoritoPizza.addEventListener('click', () => {
                     window.location.href = `../pagesProdutos/detalhesPizza.html?pizzaid=${pizzaId}`
