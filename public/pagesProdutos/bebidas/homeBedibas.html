@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
     <title>HomePIzza</title>
 
     <style>
@@ -25,47 +25,63 @@
 <body id="bodySlate" class="max-sm:min-h-screen flex flex-col bg-slate-100 w-screen h-screen relative text-orange-600">
 
     <header class="flex justify-between align-baseline mt-8 items-center">
-        <img src="../iconsDrawer/drawer.svg" alt="" class="ml-7 cursor-pointer" id="menuButton" />
+        <img src="../../iconsDrawer/drawer.svg" alt="" class="ml-7 cursor-pointer" id="menuButton" />
         <h2
             class="text-3xl fonteHeader mx-auto bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-amber-400">
             Pizzaria Ramos</h2>
-        <img src="../iconsFood/search-bar.svg" alt="botão de pesquisa de alimentos" class="mr-7">
+        <img src="../../iconsFood/search-bar.svg" alt="botão de pesquisa de alimentos" class="mr-7">
     </header>
 
     <main class="h-full overflow-auto pb-24">
-        <section id="sectionPizza" class="mt-5">
-            <div class=" text-zinc-600 text-xl font-semibold fontText ml-8">Sabores de Pizza</div>
+        
+        <section id="sectionBebidas" class="mt-5">
+            <div class=" text-zinc-600 text-xl font-semibold fontText ml-8">Bebidas</div>
+            
+            <div class="w-[331px] h-[222px] relative mx-auto">
+                <div class="w-[331px] h-[222px] relative mx-auto mt-5 bg-white rounded-[20px] shadow">
+                    <div class="w-[30px] h-[30px] left-[294px] top-[185px] absolute">
+                        <img class="w-[30px] h-[30px] left-0 top-0 absolute" src="../../iconsFood/add_roudond.svg" alt="">
+                    </div>
+                    <p class="w-[133px] left-[188px] top-[13px] absolute text-xl font-semibold fontText">Refrigerante em lata</p>
+                    <p class="left-[23px] top-[178px] absolute text-center text-amber-400 text-xl font-bold fontText tracking-wide">
+                        R$ 5.99</p>
+                    <img class="w-[175px] h-[152px] left-[10px] top-[26px] absolute" src="../../images/refriLata.jpg"
+                        alt="imagem de refrigerantes em lata">
+                    <p class="w-[122px] left-[190px] top-[76px] absolute text-zinc-600 text-[13px] font-bold fontText">Coca Cola,
+                        Fanta Laranja, Fanta Uva, Sprite, Guaraná, Guaraná Jesus</p>
+                </div>
+            </div>
         </section>
     </main>
 
     <div id="drawer"
         class="bg-orange-600 w-[77px] h-[691px] fixed top-0 left-0 transform -translate-x-full transition-transform duration-200 ease-in-out overflow-y-auto rounded-br-[25px] rounded-tr-[25px] mt-5">
-        <img id="closeMenu" src="../iconsDrawer/botao-fechar-menu.svg" alt="" class="mt-9 mx-auto cursor-pointer" />
+        <img id="closeMenu" src="../../iconsDrawer/botao-fechar-menu.svg" alt="" class="mt-9 mx-auto cursor-pointer" />
         <div class="border-2 border-white w-[40px] mx-auto rounded mt-8 shadow"></div>
 
         <div class="w-[54px] h-[55px] relative mx-auto mt-11">
-            <div id="opcaoPizzaFocus" class="button w-[54px] h-[55px] bg-white shadow rounded-[40px] left-0 top-0 absolute" data-target="sectionPizza">
+            <div id="opcaoPizzaFocus" class="button w-[54px] h-[55px]" data-target="sectionPizza">
                 <div class="w-10 h-[38.47px] left-[7px] top-[10px] absolute">
-                    <a href="../screens/homePizza.html" onclick="handleItemClick('opcaoPizzaFocus')">
+                    <a href="../../screens/home.html" onclick="handleItemClick('opcaoPizzaFocus')">
                         <div>
                             <svg width="40" height="38" viewBox="0 0 46 44" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <g id="op&#195;&#167;&#195;&#163;o pizza">
                                     <path id="Vector"
                                         d="M3.22354 9.85073C3.11851 9.6778 3.04862 9.48586 3.01787 9.28589C2.98712 9.08591 2.99612 8.88184 3.04435 8.68535C3.09258 8.48886 3.17909 8.30381 3.29894 8.14081C3.41878 7.9778 3.5696 7.84003 3.74276 7.73539C9.55168 4.22184 16.2112 2.3645 23 2.3645C29.7889 2.3645 36.4483 4.22184 42.2573 7.73539C42.4304 7.84003 42.5812 7.9778 42.7011 8.14081C42.8209 8.30381 42.9074 8.48886 42.9557 8.68535C43.0039 8.88184 43.0129 9.08591 42.9821 9.28589C42.9514 9.48586 42.8815 9.6778 42.7765 9.85073L24.3154 40.0923C24.1785 40.3193 23.9852 40.507 23.7545 40.6373C23.5237 40.7676 23.2631 40.8361 22.9981 40.8361C22.7331 40.8361 22.4725 40.7676 22.2417 40.6373C22.0109 40.507 21.8177 40.3193 21.6808 40.0923L3.22354 9.85073Z"
-                                        stroke="#D95A11" stroke-width="4.61528" stroke-linecap="round"
+                                        stroke="white" stroke-width="4.61528" stroke-linecap="round"
                                         stroke-linejoin="round" />
                                     <path id="Vector_2"
                                         d="M28.0007 34.0598C27.2313 33.6836 26.549 33.1509 25.9973 32.4959C25.4456 31.8409 25.0367 31.0779 24.7967 30.2558C24.5568 29.4337 24.4911 28.5705 24.6039 27.7216C24.7166 26.8726 25.0053 26.0565 25.4515 25.3256C25.8977 24.5946 26.4916 23.9648 27.1951 23.4764C27.8987 22.9881 28.6964 22.652 29.5373 22.4896C30.3781 22.3272 31.2436 22.3422 32.0784 22.5335C32.9132 22.7247 33.6989 23.0882 34.3851 23.6005"
-                                        stroke="#D95A11" stroke-width="4.61528" stroke-linecap="round"
+                                        stroke="white" stroke-width="4.61528" stroke-linecap="round"
                                         stroke-linejoin="round" />
                                     <path id="Vector_3"
                                         d="M6.47638 15.1779C11.3429 11.8458 17.1031 10.0628 23.001 10.0628C28.8989 10.0628 34.6591 11.8458 39.5256 15.1779"
-                                        stroke="#D95A11" stroke-width="4.61528" stroke-linecap="round"
+                                        stroke="white" stroke-width="4.61528" stroke-linecap="round"
                                         stroke-linejoin="round" />
                                     <path id="Vector_4"
                                         d="M8.08942 17.82C8.76045 17.2111 9.55768 16.7578 10.4242 16.4927C11.2906 16.2276 12.205 16.157 13.1019 16.2862C13.9987 16.4154 14.856 16.741 15.6125 17.2398C16.369 17.7387 17.0059 18.3984 17.4779 19.172C17.9498 19.9455 18.2451 20.8137 18.3427 21.7146C18.4403 22.6154 18.3377 23.5267 18.0422 24.3833C17.7468 25.24 17.2659 26.0208 16.6337 26.67C16.0016 27.3192 15.2339 27.8208 14.3854 28.139"
-                                        stroke="#D95A11" stroke-width="4.61528" stroke-linecap="round"
+                                        stroke="white" stroke-width="4.61528" stroke-linecap="round"
                                         stroke-linejoin="round" />
                                 </g>
                             </svg>
@@ -78,7 +94,7 @@
         <div class="w-[54px] h-[55px] relative mx-auto mt-20">
             <div id="optionHamburguer" class="button w-[54px] h-[55px]">
                 <div class="w-10 h-[38.47px] left-[7px] top-[10px] absolute">
-                    <a href="../pagesProdutos/hamburguer/homeHamburguer.html" onclick="handleItemClick('optionHamburguer')">
+                    <a href="../hamburguer/homeHamburguer.html" onclick="handleItemClick('optionHamburguer')">
                         <div>
                             <svg width="40" height="38" viewBox="0 0 46 41" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -108,7 +124,7 @@
         <div class="w-[54px] h-[55px] relative mx-auto mt-20">
             <div id="optionDoces" class="button w-[54px] h-[55px]">
                 <div class="w-10 h-[38.47px] left-[7px] top-[10px] absolute">
-                    <a href="../pagesProdutos/doces/docesHome.html" onclick="handleItemClick('optionDoces')">
+                    <a href="../doces/docesHome.html">
                         <div>
                             <svg width="40" height="38" viewBox="0 0 46 46" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -138,22 +154,22 @@
         </div>
 
         <div class="w-[54px] h-[55px] relative mx-auto mt-20">
-            <div id="optionBebidas" class="button w-[54px] h-[55px]">
+            <div id="optionBebidas" class="button w-[54px] h-[55px] bg-white shadow rounded-[40px] left-0 top-0 absolute">
                 <div class="w-10 h-[38.47px] left-[7px] top-[10px] absolute">
-                    <a href="../pagesProdutos/bebidas/homeBedibas.html">
+                    <a href="#">
                         <div>
                             <svg width="40" height="38" viewBox="0 0 46 46" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <g id="op&#195;&#167;&#195;&#163;o bebidas">
-                                    <path id="Vector" d="M37.0739 3.22052L42.9999 9.14655" stroke="white"
+                                    <path id="Vector" d="M37.0739 3.22052L42.9999 9.14655" stroke="#D95A11"
                                         stroke-width="4.44452" stroke-linecap="round" stroke-linejoin="round" />
                                     <path id="Vector_2"
                                         d="M38.5558 4.70206L26.7037 13.5911L19.2961 15.0726L3.86809 30.5007C3.59287 30.7758 3.37456 31.1025 3.22561 31.462C3.07666 31.8216 3 32.2069 3 32.5961C3 32.9852 3.07666 33.3706 3.22561 33.7301C3.37456 34.0897 3.59287 34.4163 3.86809 34.6915L11.5293 42.3527C11.8045 42.628 12.1312 42.8463 12.4907 42.9952C12.8502 43.1442 13.2356 43.2208 13.6247 43.2208C14.0139 43.2208 14.3993 43.1442 14.7588 42.9952C15.1183 42.8463 15.445 42.628 15.7202 42.3527L31.1482 26.9247L32.6297 19.5171L41.5188 7.66507"
-                                        stroke="white" stroke-width="4.44452" stroke-linecap="round"
+                                        stroke="#D95A11" stroke-width="4.44452" stroke-linecap="round"
                                         stroke-linejoin="round" />
-                                    <path id="Vector_3" d="M16.3329 18.0356L28.185 29.8877" stroke="white"
+                                    <path id="Vector_3" d="M16.3329 18.0356L28.185 29.8877" stroke="#D95A11"
                                         stroke-width="4.44452" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path id="Vector_4" d="M19.2957 38.7767L7.44366 26.9247" stroke="white"
+                                    <path id="Vector_4" d="M19.2957 38.7767L7.44366 26.9247" stroke="#D95A11"
                                         stroke-width="4.44452" stroke-linecap="round" stroke-linejoin="round" />
                                 </g>
                             </svg>
@@ -171,7 +187,7 @@
         <div class="fixed bottom-0 w-full h-[85px]">
             <nav class="bg-orange-600 w-full">
                 <div class="flex py-7 px-10 justify-center gap-16 items-center">
-                    <a href="./homePizza.html">
+                    <a href="./home.html">
                         <div class="w-10 h-[40px] bg-white rounded-full flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="27" fill="none" viewBox="0 0 26 27">
                                 <path fill="#F1F5F9" stroke="#D95A11" stroke-linecap="round" stroke-linejoin="round"
@@ -181,7 +197,7 @@
     
                         </div>
                     </a>
-                    <a href="./favorito.html">
+                    <a href="../../screens/favorito.html">
                         <div>
                             <svg width="30" height="26" viewBox="0 0 30 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path id="Vector"
@@ -192,7 +208,7 @@
     
                         </div>
                     </a>
-                    <a href="./cart.html">
+                    <a href="../../screens/cart.html">
                         <div>
                             <svg width="31" height="28" viewBox="0 0 31 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g id="carrinho">
@@ -215,7 +231,7 @@
         
                         </div>
                     </a>
-                    <a href="./historico.html">
+                    <a href="../../screens/historico.html">
                         <div>
                             <svg width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g id="hist&#195;&#179;rico">
@@ -242,8 +258,8 @@
 <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore-compat.js"></script>
-<script src="../js/pizzaJs/renderPizza.js"></script>
-<script src="../js/drawer.js"></script>
+<script src="../../js/hamburguerJs/renderHambirguer.js"></script>
+<script src="../../js/drawer.js"></script>
 <!--<script src="../js/logout.js"></script> -->
 
 

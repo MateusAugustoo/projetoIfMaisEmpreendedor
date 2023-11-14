@@ -124,7 +124,7 @@ function renderProdutosCarrinho() {
     const sectionLanches = document.getElementById('section-lanches');
     
     let subtotal = 0;
-
+    
     carrinho.forEach((lanches) => {
         const containerLanche = document.createElement('div');
         containerLanche.className = 'flex justify-between px-5 mt-2'
@@ -151,7 +151,9 @@ function renderProdutosCarrinho() {
 
         const precoLanche = document.createElement('p');
         precoLanche.className = 'text-right text-gray-800 text-xs font-semibold'
-        precoLanche.textContent = `R$ ${lanches.preco}`;
+
+        const calc = lanches.preco * lanches.quantidade;
+        precoLanche.textContent = `R$ ${calc}`;
         containerLanche.appendChild(precoLanche);
 
         subtotal += lanches.preco * lanches.quantidade;
@@ -170,15 +172,15 @@ function renderProdutosCarrinho() {
 function excluirLanche() {
     const carrinho = JSON.parse(localStorage.getItem('carrinho'));
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    const carrinhoAtualizado = [];
+    const novosItens = [];
 
     checkboxes.forEach((checkbox, index) => {
-        if (checkbox.checked) {
-            carrinho.splice(index, 1);
+        if (!checkbox.checked) {
+            novosItens.push(carrinho[index]);
         }
     });
 
-    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    localStorage.setItem('carrinho', JSON.stringify(novosItens));
 
     renderProdutosCarrinho();
 

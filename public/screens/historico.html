@@ -2,12 +2,26 @@
 <html lang="pt-be">
 
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .fontText {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .fonteHeader {
+            font-family: 'Lobster', cursive;
+        }
+    </style>
 
     <link rel="stylesheet" href="../css/style.css" />
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <title>Historico</title>
 
 </head>
@@ -27,9 +41,9 @@
         <div class="border-2 border-white w-[40px] mx-auto rounded mt-8 shadow"></div>
 
         <div class="w-[54px] h-[55px] relative mx-auto mt-11">
-            <div id="OpcaoPizzaFocus" class="button w-[54px] h-[55px]">
+            <div id="opcaoPizzaFocus" class="button w-[54px] h-[55px] " data-target="sectionPizza">
                 <div class="w-10 h-[38.47px] left-[7px] top-[10px] absolute">
-                    <a href="#SectionPizza" onclick="handleItemClick('OpcaoPizzaFocus')">
+                    <a href="../screens/homePizza.html" onclick="handleItemClick('opcaoPizzaFocus')">
                         <div>
                             <svg width="40" height="38" viewBox="0 0 46 44" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -59,9 +73,10 @@
         </div>
 
         <div class="w-[54px] h-[55px] relative mx-auto mt-20">
-            <div id="OptionHamburguer" class="button w-[54px] h-[55px]">
+            <div id="optionHamburguer" class="button w-[54px] h-[55px]">
                 <div class="w-10 h-[38.47px] left-[7px] top-[10px] absolute">
-                    <a href="#" onclick="handleItemClick('OptionHamburguer')">
+                    <a href="../pagesProdutos/hamburguer/homeHamburguer.html"
+                        onclick="handleItemClick('optionHamburguer')">
                         <div>
                             <svg width="40" height="38" viewBox="0 0 46 41" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -89,9 +104,9 @@
         </div>
 
         <div class="w-[54px] h-[55px] relative mx-auto mt-20">
-            <div id="OptionDoces" class="button w-[54px] h-[55px]">
+            <div id="optionDoces" class="button w-[54px] h-[55px]">
                 <div class="w-10 h-[38.47px] left-[7px] top-[10px] absolute">
-                    <a href="#" onclick="handleItemClick('OptionDoces')">
+                    <a href="../pagesProdutos/doces/docesHome.html" onclick="handleItemClick('optionDoces')">
                         <div>
                             <svg width="40" height="38" viewBox="0 0 46 46" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -121,9 +136,9 @@
         </div>
 
         <div class="w-[54px] h-[55px] relative mx-auto mt-20">
-            <div id="OptionBebidas" class="button w-[54px] h-[55px]">
+            <div id="optionBebidas" class="button w-[54px] h-[55px]">
                 <div class="w-10 h-[38.47px] left-[7px] top-[10px] absolute">
-                    <a href="#" onclick="handleItemClick('OptionBebidas')">
+                    <a href="../pagesProdutos/bebidas/homeBedibas.html">
                         <div>
                             <svg width="40" height="38" viewBox="0 0 46 46" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -150,11 +165,11 @@
 
 
     <main>
-        
+
     </main>
 
 
-<!--navBottonBar-->
+    <!--navBottonBar-->
     <div class="flex fixed bottom-0 w-full h-[85px]">
         <nav class="bg-orange-600 w-full">
             <div class="flex py-7 px-10 justify-center gap-16 items-center">
@@ -206,12 +221,17 @@
                     <div class="w-10 h-[40px] bg-white rounded-full flex items-center justify-center">
                         <svg width="28" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g id="hist&#195;&#179;rico">
-                            <path id="Vector" d="M15.6367 7.68237V14.5006L21.3185 17.9096" stroke="#D95A11" stroke-width="3.40909" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path id="Vector_2" d="M7.68182 11.0915H2V5.40967" stroke="#D95A11" stroke-width="3.40909" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path id="Vector_3" d="M7.05682 23.5915C8.8437 25.2776 11.0878 26.3997 13.5089 26.8178C15.9299 27.2358 18.4204 26.9311 20.6692 25.9417C22.918 24.9524 24.8254 23.3223 26.1531 21.2551C27.4808 19.188 28.1699 16.7754 28.1343 14.3188C28.0987 11.8622 27.3399 9.47064 25.9529 7.44282C24.5658 5.415 22.6119 3.84089 20.3354 2.91717C18.0588 1.99345 15.5605 1.76107 13.1527 2.24908C10.7448 2.73709 8.53413 3.92385 6.79687 5.66106C5.125 7.35424 3.74432 8.95083 2 11.0915" stroke="#D95A11" stroke-width="3.40909" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path id="Vector" d="M15.6367 7.68237V14.5006L21.3185 17.9096" stroke="#D95A11"
+                                    stroke-width="3.40909" stroke-linecap="round" stroke-linejoin="round" />
+                                <path id="Vector_2" d="M7.68182 11.0915H2V5.40967" stroke="#D95A11"
+                                    stroke-width="3.40909" stroke-linecap="round" stroke-linejoin="round" />
+                                <path id="Vector_3"
+                                    d="M7.05682 23.5915C8.8437 25.2776 11.0878 26.3997 13.5089 26.8178C15.9299 27.2358 18.4204 26.9311 20.6692 25.9417C22.918 24.9524 24.8254 23.3223 26.1531 21.2551C27.4808 19.188 28.1699 16.7754 28.1343 14.3188C28.0987 11.8622 27.3399 9.47064 25.9529 7.44282C24.5658 5.415 22.6119 3.84089 20.3354 2.91717C18.0588 1.99345 15.5605 1.76107 13.1527 2.24908C10.7448 2.73709 8.53413 3.92385 6.79687 5.66106C5.125 7.35424 3.74432 8.95083 2 11.0915"
+                                    stroke="#D95A11" stroke-width="3.40909" stroke-linecap="round"
+                                    stroke-linejoin="round" />
                             </g>
-                            </svg>
-                          
+                        </svg>
+
                     </div>
                 </a>
             </div>

@@ -35,7 +35,7 @@ function saboresAdicionaisPizza() {
                         d="M2.686 11.5h17.696m-8.849 8.75V2.75" />
                 </svg>
             </div>
-            <img src="../images/pizza_img.png" class="relative bottom-7">
+            <img src="../../images/pizza_img.png" class="relative bottom-7">
             <button id="btnMostrar"
                 class="w-24 h-6 relative bottom-16 left-14 rounded-xl bg-white text-orange-600 text-xs font-semibold"
                 onclick="MostrarOuOcultarIngredientes()">
@@ -66,7 +66,7 @@ const fromPizza = document.getElementById('formPizza')
 let precoPizza = document.getElementById('precoPizza')
 let quantidadeFatias = document.getElementById('quantidadeFatias')
 let quantidadesSabor = document.getElementById('quantidadeSabor')
-let quantidadePizza = document.getElementById('quantidadePizza').innerHTML = 0;
+let quantidadePizza = document.getElementById('quantidadePizza').textContent = 0;
 
 async function precoAndFatias() {
     await precoPizzaRefDb.get().then((querySnapshot) => {
@@ -188,7 +188,7 @@ fromPizza.addEventListener('submit', (e) => {
     adicionarAoCarrinho();
 });
 
-function criarPizza() {
+function adicionarAoCarrinho() {
     const urlParams = new URLSearchParams(window.location.search);
     const pizzaId = urlParams.get('pizzaid');
     const nomeDaPizza = document.getElementById('nomeDaPizza').textContent;
@@ -196,36 +196,22 @@ function criarPizza() {
     const precoPizza = parseFloat(document.getElementById('precoPizza').textContent.replace(',', '.'));
     const tamanhoPizza = document.querySelector('input[name="tamanhoComida"]:checked').value;
 
-    return {
+    const pizza = {
         id: pizzaId,
         nome: nomeDaPizza,
         quantidade: quantidadePizza,
         preco: precoPizza,
         tamanho: tamanhoPizza
     };
-}
 
-async function atualizarCarrinho(pizza) {
-    const carrinhoRef = db.collection('carrinho');
-    const userId = auth.currentUser.uid;
-    const docRef = carrinhoRef.doc(userId);
-    const doc = await docRef.get();
+    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
-    if (!doc.exists) {
-        await docRef.set({ produtos: [pizza] });
+    const index = carrinho.findIndex(item => item.id === pizzaId);
+    if (index !== -1) {
+        carrinho[index].quantidade += quantidadePizza;
     } else {
-        const produtos = doc.data().produtos;
-        const index = produtos.findIndex(p => p.id === pizza.id && p.tamanho === pizza.tamanho);
-        if (index === -1) {
-            produtos.push(pizza);
-        } else {
-            produtos[index].quantidade += pizza.quantidade;
-        }
-        await docRef.update({ produtos });
+        carrinho.push(pizza);
     }
-}
 
-function adicionarAoCarrinho() {
-    const pizza = criarPizza();
-    atualizarCarrinho(pizza);
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
 }

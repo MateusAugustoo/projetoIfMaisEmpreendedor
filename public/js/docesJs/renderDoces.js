@@ -1,4 +1,14 @@
+const firebaseConfig = {
+    apiKey: "AIzaSyAAMYwMahCex-tSp-g7eEW5uENub_EmvMU",
+    authDomain: "ifmaisempreendedorangica-4cab5.firebaseapp.com",
+    projectId: "ifmaisempreendedorangica-4cab5",
+    storageBucket: "ifmaisempreendedorangica-4cab5.appspot.com",
+    messagingSenderId: "971295144283",
+    appId: "1:971295144283:web:35965497f0a0fe43b6427e"
+};
+firebase.initializeApp(firebaseConfig);
 
+const db = firebase.firestore();
 
 async function renderDoces() {
     const sectionDoces = document.getElementById('sectionDoces');
@@ -10,7 +20,7 @@ async function renderDoces() {
         docesId = doc.id;
 
         const docesElement = document.createElement('div');
-        docesElement.className = 'w-[155px] h-[222px] relative bg-white shadow rounded-xl mx-7';
+        docesElement.className = 'w-[155px] h-[222px] relative bg-white shadow rounded-xl mx-7 mt-5';
 
         const docesImage = document.createElement('img');
         docesImage.className = 'w-[149.81px] h-[100px] top-[20px] absolute'
@@ -36,7 +46,7 @@ async function renderDoces() {
         const iconAddSecondDiv = document.createElement('div');
         iconAddSecondDiv.className = 'w-[25px] h-[25px] left-0 top-0 absolute'
         const iconAdd = document.createElement('img');
-        iconAdd.src = '../iconsFood/add_roudond.svg';
+        iconAdd.src = '../../iconsFood/add_roudond.svg';
 
         iconAddSecondDiv.appendChild(iconAdd);
         iconAddFirstDiv.appendChild(iconAddSecondDiv);
@@ -45,7 +55,7 @@ async function renderDoces() {
         sectionDoces.appendChild(docesElement);
 
         docesElement.addEventListener('click', ()=>{
-            window.location.href = `../pagesProdutos/detalhesDoces.html?docesid=${docesId}`;
+            window.location.href = `../../pagesProdutos/doces/detalhesDoces.html?docesid=${docesId}`;
         })
     })
 } renderDoces();
