@@ -14,106 +14,104 @@ function renderCarrinho() {
 }renderCarrinho();
 
 function layoutCarrinho() {
-    const table = document.createElement('div')
-    table.className = 'w-[363px] h-[293px] relative mx-auto mt-4 px-5';
+    const containerCarrinho = document.createElement('div');
+    containerCarrinho.className = 'bg-yellow-100 h-auto w-[100%] border border-orange-600 mt-4';
 
-    const tableBody = document.createElement('div');
-    tableBody.className = 'w-[363px] h-auto left-0 top-0 absolute bg-yellow-100 py-6 border border-orange-600';
-    table.appendChild(tableBody);
+    const tableCarrinho = document.createElement('table');
+    tableCarrinho.className = 'w-[100%]';
 
-    const tableHead = document.createElement('div');
-    tableHead.className = 'flex justify-around'
+    const theadCarrinho = document.createElement('thead');
 
-    const tableHeadNome = document.createElement('p');
-    tableHeadNome.className = 'relative text-zinc-600 text-xs font-extrabold uppercase tracking-wide';
-    tableHeadNome.textContent = 'Descrição';
-    tableHead.appendChild(tableHeadNome);
+    const trCarrinho = document.createElement('tr');
+    trCarrinho.className = 'flex justify-around mt-10';
 
-    const tableHeadQuant = document.createElement('p');
-    tableHeadQuant.className = 'relative text-zinc-600 text-xs font-extrabold uppercase tracking-wide';
-    tableHeadQuant.textContent = 'Quantidade';
-    tableHead.appendChild(tableHeadQuant);
+    const thCarrinhoDesc = document.createElement('th');
+    thCarrinhoDesc.className = 'text-zinc-600 text-xs font-extrabold uppercase tracking-wide'
+    thCarrinhoDesc.textContent = 'Descrição';
 
-    const tableHeadValor = document.createElement('p');
-    tableHeadValor.className = 'relative text-zinc-600 text-xs font-extrabold uppercase tracking-wide';
-    tableHeadValor.textContent = 'Valor';
-    tableHead.appendChild(tableHeadValor);
+    const thCarrinhoQtd = document.createElement('th');
+    thCarrinhoQtd.className = 'text-zinc-600 text-xs font-extrabold uppercase tracking-wide'
+    thCarrinhoQtd.textContent = 'Quantidade';
 
-    tableBody.appendChild(tableHead);
+    const thCarrinhoPreco = document.createElement('th');
+    thCarrinhoPreco.className = 'text-zinc-600 text-xs font-extrabold uppercase tracking-wide'
+    thCarrinhoPreco.textContent = 'valor';
 
-    const sectionLanches = document.createElement('section');
-    sectionLanches.id = 'section-lanches';
-    tableBody.appendChild(sectionLanches);
+    trCarrinho.appendChild(thCarrinhoDesc);
+    trCarrinho.appendChild(thCarrinhoQtd);
+    trCarrinho.appendChild(thCarrinhoPreco);
+    theadCarrinho.appendChild(trCarrinho);
+    tableCarrinho.appendChild(theadCarrinho);
 
-    const divider = document.createElement('div');
-    divider.className = 'w-[319px] h-[1px] bg-gray-500 mx-auto mt-4';
-    tableBody.appendChild(divider);
+    const tbodyCarrinho = document.createElement('tbody');
+    tbodyCarrinho.id = 'section-lanches';
+    tableCarrinho.appendChild(tbodyCarrinho);
+    containerCarrinho.appendChild(tableCarrinho);
 
-    const sectionSubTotal = document.createElement('section');
-    sectionSubTotal.className = 'px-5 mt-5 mb-5 flex flex-col gap-3';
+    const dividerCarrinho = document.createElement('div');
+    dividerCarrinho.className = 'w-11/12 mx-auto h-[1.60px] bg-gray-500';
+    containerCarrinho.appendChild(dividerCarrinho);
 
+
+    const containerSubTotalDiv = document.createElement('div');
     const containerSubTotal = document.createElement('div');
-    containerSubTotal.className = 'flex justify-between';
+    containerSubTotal.className = 'w-11/12 mx-auto flex justify-between mt-4 pb-4 divide-gray-500';
 
-    const pSubTotalTitulo = document.createElement('p');
-    pSubTotalTitulo.className = 'text-zinc-600 text-[12px] font-semibold tracking-wider';
-    pSubTotalTitulo.textContent = 'Subtotal';
+    const pSubTotal = document.createElement('p');
+    pSubTotal.className = 'text-zinc-600 text-xs font-semibold tracking-wide';
+    pSubTotal.textContent = 'Subtotal';
+
     const pSubTotalValor = document.createElement('p');
     pSubTotalValor.id = 'p-subtotal';
-    pSubTotalValor.className = 'text-right text-gray-800 text-xs font-bold';
+    pSubTotalValor.className = 'text-gray-800 text-xs font-bold';
 
-    containerSubTotal.appendChild(pSubTotalTitulo);
+    containerSubTotal.appendChild(pSubTotal);
     containerSubTotal.appendChild(pSubTotalValor);
+    containerSubTotalDiv.appendChild(containerSubTotal);
 
-    const containerTaxaEntrega = document.createElement('div');
-    containerTaxaEntrega.className = 'flex justify-between';
+    const containerTaxaDiv = document.createElement('div');
+    const containerTaxa = document.createElement('div');
+    containerTaxa.className = 'w-11/12 mx-auto flex justify-between pb-4';
 
-    const pTaxaEntregaTitulo = document.createElement('p');
-    pTaxaEntregaTitulo.className = 'text-zinc-600 text-[12px] font-semibold tracking-wider';
-    pTaxaEntregaTitulo.textContent = 'Taxa de entrega';
-    const pTaxaEntregaValor = document.createElement('p');
-    pTaxaEntregaValor.id = 'p-taxa';
-    pTaxaEntregaValor.className = 'text-right text-gray-800 text-xs font-bold';
+    const pTaxa = document.createElement('p');
+    pTaxa.className = 'text-zinc-600 text-xs font-semibold tracking-wide';
+    pTaxa.textContent = 'Taxa de entrega';
 
-    containerTaxaEntrega.appendChild(pTaxaEntregaTitulo);
-    containerTaxaEntrega.appendChild(pTaxaEntregaValor);
+    const pTaxaValor = document.createElement('p');
+    pTaxaValor.id = 'p-taxa';
+    pTaxaValor.className = 'text-gray-800 text-xs font-bold';
 
-    sectionSubTotal.appendChild(containerSubTotal);
-    sectionSubTotal.appendChild(containerTaxaEntrega);
+    containerTaxa.appendChild(pTaxa);
+    containerTaxa.appendChild(pTaxaValor);
+    containerTaxaDiv.appendChild(containerTaxa);
 
-    tableBody.appendChild(sectionSubTotal);
+    containerSubTotalDiv.appendChild(containerTaxaDiv);
+    containerCarrinho.appendChild(containerSubTotalDiv);
 
-    const divider2 = document.createElement('div');
-    divider2.className = 'w-[319px] h-[1px] bg-gray-500 mx-auto mt-4';
+    const dividerCarrinho2 = document.createElement('div');
+    dividerCarrinho2.className = 'w-11/12 mx-auto h-[1.60px] bg-gray-500';
+    containerCarrinho.appendChild(dividerCarrinho2);
 
-    tableBody.appendChild(divider2);
+    const containerTotalDiv = document.createElement('div');
+    containerTotalDiv.className = 'w-11/12 mx-auto flex justify-between mt-4 pb-4 items-center';
 
-    const sectionTotal = document.createElement('section');
-    sectionTotal.className = 'relative mt-5 px-5';
-
-    const containerTotal = document.createElement('div');
-    containerTotal.className = 'flex justify-between';
-
-    const pTotalTitulo = document.createElement('p');
-    pTotalTitulo.className = 'text-zinc-600 text-[12px] font-semibold tracking-wider';
-    pTotalSpan = document.createElement('span');
-    pTotalSpan.className = 'text-zinc-600 text-xs font-semibold tracking-wide';
-    pTotalSpan.textContent = '(R$)';
-    pTotalTitulo.textContent = 'Total ';
-    pTotalTitulo.appendChild(pTotalSpan);
+    const moeda = document.createElement('span');
+    moeda.className = 'text-zinc-600 text-xs font-semibold tracking-wide';
+    const pTotal = document.createElement('p');
+    pTotal.className = 'text-gray-800 text-xs font-semibold tracking-wide';
+    pTotal.textContent = `Total ${moeda.textContent = '(R$)'}`;
 
     const pTotalValor = document.createElement('p');
     pTotalValor.id = 'p-total-pagamento';
     pTotalValor.className = 'text-right text-orange-600 text-lg font-extrabold';
 
-    containerTotal.appendChild(pTotalTitulo);
-    containerTotal.appendChild(pTotalValor);
+    containerTotalDiv.appendChild(pTotal);
+    containerTotalDiv.appendChild(pTotalValor);
 
-    sectionTotal.appendChild(containerTotal);
+    containerCarrinho.appendChild(containerTotalDiv);
 
-    tableBody.appendChild(sectionTotal);
+    carrinhoCard.appendChild(containerCarrinho);
 
-    carrinhoCard.appendChild(table);
 }
 
 function renderProdutosCarrinho() {
@@ -126,39 +124,43 @@ function renderProdutosCarrinho() {
     let subtotal = 0;
     
     carrinho.forEach((lanches) => {
-        const containerLanche = document.createElement('div');
-        containerLanche.className = 'flex justify-between px-5 mt-2'
+        const trLanche = document.createElement('tr');
+        trLanche.className = 'flex justify-between pt-2 pb-3 mx-5'
 
-        const containerSelectLanches = document.createElement('div');
-        containerSelectLanches.className = 'checkbox-wrapper flex items-center';
-
-        const lableLanche = document.createElement('label');
-        lableLanche.className = 'text-gray-800 text-xs font-medium';
-        lableLanche.textContent = `${lanches.nome} - ${lanches.tamanho}`;
+        const tdSelectLanches = document.createElement('td');
+        tdSelectLanches.className = 'flex items-center';
 
         const inputLanche = document.createElement('input');
+        inputLanche.onchange = 'quantidadeExcluirLanche()';
+        inputLanche.id = 'input-lanche';
         inputLanche.type = 'checkbox';
+        inputLanche.className = "appearance-none w-5 h-5 bg-white rounded-md border border-orange-600 checked:bg-orange-600 checked:bg-[url('../iconsFood/item_marcado.svg')] bg-center transition duration-200";
 
-        containerSelectLanches.appendChild(inputLanche);
-        containerSelectLanches.appendChild(lableLanche);
+        const lableLanche = document.createElement('label');
+        lableLanche.className = 'text-gray-800 text-xs font-semibold ml-2';
+        lableLanche.textContent = `${lanches.nome} - ${lanches.tamanho}`;
 
-        containerLanche.appendChild(containerSelectLanches);
 
-        const quantidadeLanche = document.createElement('p');
-        quantidadeLanche.className = 'text-gray-800 text-xs font-medium'
-        quantidadeLanche.textContent = lanches.quantidade;
-        containerLanche.appendChild(quantidadeLanche)
+        tdSelectLanches.appendChild(inputLanche);
+        tdSelectLanches.appendChild(lableLanche);
+        trLanche.appendChild(tdSelectLanches);
 
-        const precoLanche = document.createElement('p');
-        precoLanche.className = 'text-right text-gray-800 text-xs font-semibold'
+        const tdquantidadeLanche = document.createElement('td');
+        tdquantidadeLanche.className = 'text-gray-800 text-xs font-semibold'
+        tdquantidadeLanche.textContent = lanches.quantidade;
+
+        trLanche.appendChild(tdquantidadeLanche);
+
+        const tdprecoLanche = document.createElement('td');
+        tdprecoLanche.className = 'text-gray-800 text-xs font-semibold'
 
         const calc = lanches.preco * lanches.quantidade;
-        precoLanche.textContent = `R$ ${calc}`;
-        containerLanche.appendChild(precoLanche);
+        tdprecoLanche.textContent = `R$ ${calc}`;
+        trLanche.appendChild(tdprecoLanche);
 
         subtotal += lanches.preco * lanches.quantidade;
 
-        sectionLanches.appendChild(containerLanche);
+        sectionLanches.appendChild(trLanche);
     });
 
     pTaxaEntrega.textContent = `R$ ${taxaEntrega}`;

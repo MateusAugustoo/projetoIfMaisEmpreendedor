@@ -21,12 +21,10 @@ function saboresAdicionaisPizza() {
             const pizzaData = doc.data()
             const pizzaAdicionaisElement = document.createElement('div')
 
-            console.log(pizzaData)
-
             pizzaAdicionaisElement.innerHTML = `
             <div class="w-40 h-40 bg-white rounded-2xl shadow" id="divComida">
             <div class="w-[114px] text-lg font-semibold fontText leading-snug tracking-widest ml-4 pt-2">
-               Pizza ${pizzaData.sabor}
+            ${pizzaData.sabor}
             </div>
             <div
                 class="w-6 h-6 rounded-full bg-zinc-600 flex justify-center items-center relative left-32 bottom-10">
@@ -63,10 +61,10 @@ const quantSaborPizzaGG = 3
 
 const precoPizzaRefDb = db.collection('PrecoPizzas')
 const fromPizza = document.getElementById('formPizza')
-let precoPizza = document.getElementById('precoPizza')
+let precoPizza = document.getElementById('precoLanche')
 let quantidadeFatias = document.getElementById('quantidadeFatias')
 let quantidadesSabor = document.getElementById('quantidadeSabor')
-let quantidadePizza = document.getElementById('quantidadePizza').textContent = 0;
+let quantidadePizza = document.getElementById('quantidadeLanche').textContent = 0;
 
 async function precoAndFatias() {
     await precoPizzaRefDb.get().then((querySnapshot) => {
@@ -107,7 +105,7 @@ async function precoAndFatias() {
 
 window.onload = function () {
     const params = new URLSearchParams(window.location.search)
-    const pizzaId = params.get('pizzaid')
+    const pizzaId = params.get('lancheId')
 
     const pizzaRef = db.collection('Pizza')
 
@@ -115,7 +113,7 @@ window.onload = function () {
         if (doc.exists) {
             const pizzaData = doc.data()
 
-            const nomeDaPizza = document.getElementById('nomeDaPizza')
+            const nomeDaPizza = document.getElementById('nomeDoLanche')
             nomeDaPizza.textContent = pizzaData.sabor
         }
     })
@@ -167,13 +165,13 @@ function adicionarLancheAoFavorito(userId, pizzaId) {
 
 function adicionarQuantidadePizza() {
     quantidadePizza += 1;
-    document.getElementById('quantidadePizza').innerHTML = quantidadePizza;
+    document.getElementById('quantidadeLanche').innerHTML = quantidadePizza;
 }
 
 function renoverQuantidadePizza() {
     if (quantidadePizza > 0) {
         quantidadePizza -= 1;
-        document.getElementById('quantidadePizza').innerHTML = quantidadePizza;
+        document.getElementById('quantidadeLanche').innerHTML = quantidadePizza;
 
     }
 }
@@ -185,33 +183,4 @@ arrowBackHome.addEventListener('click', () => {
 
 fromPizza.addEventListener('submit', (e) => {
     e.preventDefault();
-    adicionarAoCarrinho();
 });
-
-function adicionarAoCarrinho() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const pizzaId = urlParams.get('pizzaid');
-    const nomeDaPizza = document.getElementById('nomeDaPizza').textContent;
-    const quantidadePizza = parseInt(document.getElementById('quantidadePizza').textContent);
-    const precoPizza = parseFloat(document.getElementById('precoPizza').textContent.replace(',', '.'));
-    const tamanhoPizza = document.querySelector('input[name="tamanhoComida"]:checked').value;
-
-    const pizza = {
-        id: pizzaId,
-        nome: nomeDaPizza,
-        quantidade: quantidadePizza,
-        preco: precoPizza,
-        tamanho: tamanhoPizza
-    };
-
-    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-
-    const index = carrinho.findIndex(item => item.id === pizzaId);
-    if (index !== -1) {
-        carrinho[index].quantidade += quantidadePizza;
-    } else {
-        carrinho.push(pizza);
-    }
-
-    localStorage.setItem('carrinho', JSON.stringify(carrinho));
-}
