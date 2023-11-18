@@ -20,7 +20,7 @@
     </style>
 
     <link rel="stylesheet" href="../../css/style.css">
-    <title>DetalhesPizza</title>
+    <title>Detalhes</title>
 
 </head>
 
@@ -29,7 +29,7 @@
     <header>
         <div class="flex flex-row justify-between px-8">
             <img src="../../iconsFood/voltar.svg" alt="icone de voltar" id="arrow-back-home">
-            <div class="max-sm: text-3xl font-bold fontText"><span id="nomeDaPizza"></span></div>
+            <div class="max-sm: text-3xl font-bold fontText"><span id="nomeDoLanche"></span></div>
 
             <div id="favoritar">
                 <svg width="46" height="42" viewBox="0 0 46 42" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -99,7 +99,7 @@
                         <path stroke="#606264" stroke-linecap="round" stroke-width="3.396" d="M2.618 2.5h17.877" />
                     </svg>
                 </button>
-                <span id="quantidadePizza" class="text-xl font-bold fontText"></span>
+                <span id="quantidadeLanche" class="text-xl font-bold fontText"></span>
                 <button id="renoverPizza" onclick="adicionarQuantidadePizza()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="none" viewBox="0 0 23 23">
                         <path stroke="#D95A11" stroke-linecap="round" stroke-width="4.075"
@@ -115,33 +115,17 @@
                     Sabor</span></p>
         </div>
 
-        <div class="flex flex-nowrap px-5 overflow-x-auto overflow-y-hidden mt-2 mb-16">
+        <div class="flex flex-nowrap px-5 h-auto overflow-y-hidden mt-2 mb-16">
             <div id="SaboresAdicionais" class="flex gap-5"></div>
         </div>
 
         <div class="flex justify-around relative bottom-4 items-baseline">
-            <p class="font-bold fontText text-3xl">R$ <span id="precoPizza">0</span></p>
+            <p class="font-bold fontText text-3xl">R$ <span id="precoLanche">0</span></p>
 
-            <button form="formPizza"
-                class="w-52 h-11 bg-orange-600 rounded-2xl shadow flex text-white font-bold text-xs fontText justify-center items-center gap-2" id="btnAddCarrinho">
-                <svg width="25" height="22" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g id="carrinho">
-                        <path id="Vector"
-                            d="M10.5903 27.5C11.9857 27.5 13.1168 26.3807 13.1168 25C13.1168 23.6193 11.9857 22.5 10.5903 22.5C9.1949 22.5 8.06372 23.6193 8.06372 25C8.06372 26.3807 9.1949 27.5 10.5903 27.5Z"
-                            fill="white" />
-                        <path id="Vector_2"
-                            d="M23.7285 27.5C25.1238 27.5 26.255 26.3807 26.255 25C26.255 23.6193 25.1238 22.5 23.7285 22.5C22.3331 22.5 21.2019 23.6193 21.2019 25C21.2019 26.3807 22.3331 27.5 23.7285 27.5Z"
-                            fill="white" />
-                        <g id="Vector_3">
-                            <path
-                                d="M5.82647 7.00001H28.7815L25.334 18.0888C25.2067 18.4976 24.9503 18.8553 24.6024 19.1093C24.2546 19.3633 23.8335 19.5002 23.4012 19.5H10.9604C10.5211 19.5002 10.0938 19.3588 9.74295 19.0971C9.39216 18.8355 9.13705 18.4679 9.01624 18.05L4.59477 2.72501C4.53422 2.51554 4.40619 2.33136 4.23016 2.2005C4.05412 2.06963 3.8397 1.99923 3.61952 2.00001H2"
-                                <path
-                                d="M5.82647 7.00001H28.7815L25.334 18.0888C25.2067 18.4976 24.9503 18.8553 24.6024 19.1093C24.2546 19.3633 23.8335 19.5002 23.4012 19.5H10.9604C10.5211 19.5002 10.0938 19.3588 9.74295 19.0971C9.39216 18.8355 9.13705 18.4679 9.01624 18.05L4.59477 2.72501C4.53422 2.51554 4.40619 2.33136 4.23016 2.2005C4.05412 2.06963 3.8397 1.99923 3.61952 2.00001H2"
-                                stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                        </g>
-                    </g>
-                </svg>
-                Adicionar ao Carrinho
+            <button id="btnBackground"
+                class="w-52 h-11 bg-orange-600 rounded-2xl shadow flex text-white font-bold text-xs fontText justify-center items-center gap-2" onclick="adicionarAoCarrinho()">
+                <img src="../../iconsFood/carrinho.svg" alt="icone de adicionar o lanche ao carrinho">
+                <span id="btnText">Adicionar ao Carrinho</span>
             </button>
         </div>
 
@@ -153,6 +137,8 @@
 <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore-compat.js"></script>
 <script src="../../js/pizzaJs/detailsPizza.js"></script>
+
+<script src="../../js/addLancheAoCarrinho.js"></script>
 
 
 </html>
