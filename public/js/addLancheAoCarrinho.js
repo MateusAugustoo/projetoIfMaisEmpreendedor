@@ -1,5 +1,6 @@
 const btnBackground = document.getElementById('btnBackground');
 const btnText = document.getElementById('btnText');
+const btnCartIcon = document.getElementById('btnCartIcon');
 
 
 function productCheckdCart() {
@@ -38,5 +39,11 @@ function adicionarAoCarrinho() {
 }
 
 function btnStyleAdiconadoAoCarrinho() {
+    btnBackground.classList.remove('bg-orange-600', 'text-white');
+    btnBackground.classList.add('bg-white', 'border', 'border-orange-600');
+
+    btnText.textContent = 'Adicionado ao carrinho';
+
+    btnCartIcon.src = '../../images/check_product_cart.svg';
     
 }
