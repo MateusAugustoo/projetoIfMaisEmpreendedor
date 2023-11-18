@@ -14,7 +14,7 @@ const auth = firebase.auth();
 
 window.onload = function () {
     const params = new URLSearchParams(window.location.search);
-    const docesId = params.get('docesid');
+    const docesId = params.get('lancheId');
 
     const docesRef = db.collection('Doces');
 
@@ -22,10 +22,10 @@ window.onload = function () {
         if (doc.exists) {
             docesData = doc.data();
 
-            const nomeDoces = document.getElementById('nomeDoce');
+            const nomeDoces = document.getElementById('nomeDoLanche');
             nomeDoces.textContent = docesData.nome;
 
-            const precoDoces = document.getElementById('precoDoce');
+            const precoDoces = document.getElementById('precoLanche');
             precoDoces.textContent = `R$ ${docesData.preco}`;
 
             const descricaoDoces = document.getElementById('ingredientesDoce');
@@ -88,13 +88,13 @@ const btnRemoverQuantidade = document.getElementById('removeQuantLanche');
 
 function addQauntidadeLanche() {
     quantidadeLanche++;
-    document.getElementById('quantidade').textContent = quantidadeLanche;
+    document.getElementById('quantidadeLanche').textContent = quantidadeLanche;
 }
 
 function removerQuantidadeLanche() {
     if (quantidadeLanche > 0) {
         quantidadeLanche--;
-        document.getElementById('quantidade').textContent = quantidadeLanche;
+        document.getElementById('quantidadeLanche').textContent = quantidadeLanche;
     }
 
 }
