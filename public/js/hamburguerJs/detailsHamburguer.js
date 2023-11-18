@@ -14,9 +14,9 @@ const auth = firebase.auth();
 
 window.onload = function () {
     const params = new URLSearchParams(window.location.search);
-    const hamburguerId = params.get('hamburguerid');
-    const nomeHamburguer = document.getElementById('nomeHamburguer');
-    const precoHamburguer = document.getElementById('precoHamburguer');
+    const hamburguerId = params.get('lancheId');
+    const nomeHamburguer = document.getElementById('nomeDoLanche');
+    const precoHamburguer = document.getElementById('precoLanche');
     const descricaoHamburguer = document.getElementById('ingredientesHamburguer');
     const imagemHamburguer = document.getElementById('imageHamburguer');
 
@@ -85,13 +85,13 @@ const btnRemoverQuantidade = document.getElementById('removeQuantLanche');
 
 function addQauntidadeLanche() {
     quantidadeLanche++;
-    document.getElementById('quantidade').textContent = quantidadeLanche;
+    document.getElementById('quantidadeLanche').textContent = quantidadeLanche;
 }
 
 function removerQuantidadeLanche() {
     if (quantidadeLanche > 0) {
         quantidadeLanche--;
-        document.getElementById('quantidade').textContent = quantidadeLanche;
+        document.getElementById('quantidadeLanche').textContent = quantidadeLanche;
     }
 
 }
@@ -100,33 +100,3 @@ const arrowBackPage = document.getElementById('arrowBackPage');
 arrowBackPage.addEventListener('click', () => {
     history.back();
 });
-
-
-
-function adicionarAoCarrinho() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const hamburguerId = urlParams.get('hamburguerid');
-    const nomeDoHamburguer = document.getElementById('nomeHamburguer').textContent;
-    const quantidadeHamburguer = parseInt(document.getElementById('quantidade').textContent);
-    const precoHamburguerText = document.getElementById('precoHamburguer').textContent;
-    const precoHamburguerNumber = parseFloat(precoHamburguerText.replace('R$ ', '').replace(',', '.'));
-
-    const hamburguer = {
-        id: hamburguerId,
-        nome: nomeDoHamburguer,
-        tamanho: '',
-        quantidade: quantidadeHamburguer,
-        preco: precoHamburguerNumber,
-    };
-
-    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-
-    const index = carrinho.findIndex(item => item.id === hamburguerId);
-    if (index !== -1) {
-        carrinho[index].quantidade += quantidadeHamburguer;
-    } else {
-        carrinho.push(hamburguer);
-    }
-
-    localStorage.setItem('carrinho', JSON.stringify(carrinho));
-}

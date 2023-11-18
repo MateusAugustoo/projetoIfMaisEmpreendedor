@@ -55,7 +55,7 @@ async function renderDoces() {
         sectionDoces.appendChild(docesElement);
 
         docesElement.addEventListener('click', ()=>{
-            window.location.href = `../../pagesProdutos/doces/detalhesDoces.html?docesid=${docesId}`;
+            window.location.href = `../../pagesProdutos/doces/detalhesDoces.html?lancheId=${docesId}`;
         })
     })
 } renderDoces();
