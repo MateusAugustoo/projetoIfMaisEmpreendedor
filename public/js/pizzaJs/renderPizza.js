@@ -41,7 +41,7 @@ async function renderPizza() {
         pizzaElement.appendChild(pizzaFlavor);
 
         const pizzaIngredients = document.createElement('div');
-        pizzaIngredients.className = 'w-[134.81px] left-[22.13px] top-[47px] absolute text-zinc-600 text-[7px] font-bold fontText';
+        pizzaIngredients.className = 'w-[134.81px] left-[22.13px] top-[47px] absolute text-zinc-600 text-[8px] font-bold fontText';
         pizzaIngredients.textContent = pizzaData.ingrediente;
         pizzaElement.appendChild(pizzaIngredients);
 
