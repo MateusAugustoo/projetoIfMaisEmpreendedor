@@ -4,7 +4,9 @@ const btnCartIcon = document.getElementById('btnCartIcon');
 
 
 function productCheckdCart() {
-    adicionarAoCarrinho();
+    if (adicionarAoCarrinho() == false) {
+        return;
+    }
     btnStyleAdiconadoAoCarrinho();
 }
 
@@ -25,6 +27,10 @@ function adicionarAoCarrinho() {
         preco: precoLanche,
         tamanho: tamanhoLanche
     };
+    if (quantidadeLanche === 0) {
+        alert("Selecione a quantidade do lanche");
+        return false;
+      }
 
     let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
@@ -45,5 +51,5 @@ function btnStyleAdiconadoAoCarrinho() {
     btnText.textContent = 'Adicionado ao carrinho';
 
     btnCartIcon.src = '../../images/check_product_cart.svg';
-    
+
 }
