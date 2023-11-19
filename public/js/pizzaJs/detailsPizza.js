@@ -18,32 +18,87 @@ function saboresAdicionaisPizza() {
 
     pizzaRef.get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            const pizzaData = doc.data()
-            const pizzaAdicionaisElement = document.createElement('div')
+            const pizzaData = doc.data();
+            const pizzaAdicionaisElement = document.createElement('div');
 
-            pizzaAdicionaisElement.innerHTML = `
-            <div class="w-40 h-40 bg-white rounded-2xl shadow" id="divComida">
-            <div class="w-[114px] text-lg font-semibold fontText leading-snug tracking-widest ml-4 pt-2">
-            ${pizzaData.sabor}
-            </div>
-            <div
-                class="w-6 h-6 rounded-full bg-zinc-600 flex justify-center items-center relative left-32 bottom-10">
-                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" viewBox="0 0 23 23">
-                    <path stroke="#fff" stroke-linecap="round" stroke-width="4.075"
-                        d="M2.686 11.5h17.696m-8.849 8.75V2.75" />
-                </svg>
-            </div>
-            <img src="../../images/pizza_img.png" class="relative bottom-7">
-            <button id="btnMostrar"
-                class="w-24 h-6 relative bottom-16 left-14 rounded-xl bg-white text-orange-600 text-xs font-semibold"
-                onclick="MostrarOuOcultarIngredientes()">
-                Ingredientes
-            </button>
-            </div>
-            `;
+            const containerPizza = document.createElement('div');
+            containerPizza.className = 'w-40 h-40 bg-white rounded-2xl shadow';
+
+            const pizzaName = document.createElement('div');
+            pizzaName.className = 'w-[114px] text-lg font-semibold fontText leading-snug tracking-widest ml-4 pt-2';
+            pizzaName.textContent = pizzaData.sabor;
+            containerPizza.appendChild(pizzaName);
+
+            const iconeAddSabor = document.createElement('button');
+            iconeAddSabor.className = 'w-6 h-6 rounded-full bg-zinc-600 flex justify-center items-center relative left-32 bottom-10';
+            iconeAddSabor.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" viewBox="0 0 23 23">
+                <path stroke="#fff" stroke-linecap="round" stroke-width="4.075"
+                    d="M2.686 11.5h17.696m-8.849 8.75V2.75" />
+            </svg>`;
+            containerPizza.appendChild(iconeAddSabor);
+
+            const pizzaImg = document.createElement('img');
+            pizzaImg.src = '../../images/pizza_img.png';
+            pizzaImg.className = 'relative bottom-7';
+            containerPizza.appendChild(pizzaImg);
+
+            const btnMostrar = document.createElement('button');
+            btnMostrar.id = 'btnMostrar';
+            btnMostrar.className = 'w-24 h-6 relative bottom-16 left-14 rounded-xl bg-white text-orange-600 text-xs font-semibold';
+            btnMostrar.textContent = 'Ingredientes';
+            containerPizza.appendChild(btnMostrar);
+
+            //cradBack
+            const containerPizzaBack = document.createElement('div');
+            containerPizzaBack.className = 'w-40 h-40 bg-zinc-600 rounded-2xl shadow relative flex flex-col px-2';
+            containerPizzaBack.style.display = 'none';
+
+            const pizzaHeaderBack = document.createElement('div');
+            pizzaHeaderBack.className = 'flex justify-around pt-2';
+
+            const pizzaNameBack = document.createElement('p');
+            pizzaNameBack.className = 'text-white font-bold fontText';
+            pizzaNameBack.textContent = 'Ingredientes';
+            pizzaHeaderBack.appendChild(pizzaNameBack);
+            pizzaHeaderBack.appendChild(iconeAddSabor.cloneNode(true));
+
+            containerPizzaBack.appendChild(pizzaHeaderBack);
+
+            const pizzaIngredientesBack = document.createElement('div');
+            pizzaIngredientesBack.className = 'text-white font-semibold fontText w-32 text-[8px] flex';
+            pizzaIngredientesBack.textContent = pizzaData.ingrediente;
+
+            containerPizzaBack.appendChild(pizzaIngredientesBack);
+
+            const containerBtnEscoder = document.createElement('div');
+            containerBtnEscoder.className = 'absolute top-32 left-[91px]';
+            const btnEscoder = document.createElement('button');
+            btnEscoder.id = 'btnEscoder';
+            btnEscoder.className = 'bg-white w-16 h-6 shadow rounded-[15px] font-bold';
+            btnEscoder.textContent = 'Voltar';
+
+            containerBtnEscoder.appendChild(btnEscoder);
+            containerPizzaBack.appendChild(containerBtnEscoder);
+
+            pizzaAdicionaisElement.appendChild(containerPizza);
+            pizzaAdicionaisElement.appendChild(containerPizzaBack);
 
             listaSaboresAdd.appendChild(pizzaAdicionaisElement);
-        })
+
+            btnMostrar.addEventListener('click', () => {
+                containerPizza.style.transform = 'rotateY(180deg)';
+                containerPizzaBack.style.transform = 'rotateY(0deg)';
+                containerPizza.style.display = 'none';
+                containerPizzaBack.style.display = 'block';
+            });
+
+            btnEscoder.addEventListener('click', () => {
+                containerPizza.style.transform = 'rotateY(0deg)';
+                containerPizzaBack.style.transform = 'rotateY(180deg)';
+                containerPizza.style.display = 'block';
+                containerPizzaBack.style.display = 'none';
+            });
+        });
     })
 } saboresAdicionaisPizza();
 
