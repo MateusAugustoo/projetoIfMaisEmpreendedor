@@ -21,6 +21,7 @@ function saboresAdicionaisPizza() {
             const pizzaData = doc.data();
             const pizzaAdicionaisElement = document.createElement('div');
 
+<<<<<<< HEAD
             const containerPizza = document.createElement('div');
             containerPizza.className = 'w-40 h-40 bg-white rounded-2xl shadow';
 
@@ -82,6 +83,35 @@ function saboresAdicionaisPizza() {
 
             pizzaAdicionaisElement.appendChild(containerPizza);
             pizzaAdicionaisElement.appendChild(containerPizzaBack);
+=======
+            pizzaAdicionaisElement.innerHTML = `
+            <div>
+                <div class="w-40 h-40 bg-white rounded-2xl shadow" id="divComida">
+                    <div class="w-[114px] text-lg font-semibold fontText leading-snug tracking-widest ml-4 pt-2">
+                    ${pizzaData.sabor}
+                    </div>
+                    <div
+                        class="w-6 h-6 rounded-full bg-zinc-600 flex justify-center items-center relative left-32 bottom-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" viewBox="0 0 23 23">
+                            <path stroke="#fff" stroke-linecap="round" stroke-width="4.075"
+                                d="M2.686 11.5h17.696m-8.849 8.75V2.75" />
+                        </svg>
+                    </div>
+                    <img src="../../images/pizza_img.png" class="relative bottom-7">
+                    <button id="btnMostrar"
+                        class="w-24 h-6 relative bottom-16 left-14 rounded-xl bg-white text-orange-600 text-xs font-semibold"
+                        onclick="MostrarOuOcultarIngredientes(event)">
+                        Ingredientes
+                    </button>
+                </div>
+                <div class="w-40 h-40 bg-zinc-600 rounded-2xl shadow hidden" id="divIngredientes">
+                    <p class="text-white text-xs font-bold pl-3 py-2">Ingredientes</p>
+                    <p class="w-36 h-[112px] text-white text-[10px] font-semibold ml-3">${pizzaData.ingrediente}</p>
+                    <button class="w-16 h-6 bg-white rounded-2xl shadow text-orange-600 font-semibold relative bottom-5 left-20 text-xs" onclick="MostrarOuOcultarIngredientes(event)">Voltar</button>
+                </div>
+            </div>
+            `;
+>>>>>>> e7f473b90e8a830ad5f85a1485fa0fc57d3d5319
 
             listaSaboresAdd.appendChild(pizzaAdicionaisElement);
 
@@ -239,3 +269,9 @@ arrowBackHome.addEventListener('click', () => {
 fromPizza.addEventListener('submit', (e) => {
     e.preventDefault();
 });
+function MostrarOuOcultarIngredientes(event) {
+    const divComida = event.target.parentNode.parentNode.firstChild.nextSibling;
+    const divIngredientes = event.target.parentNode.parentNode.lastChild.previousSibling;
+    divIngredientes.classList.toggle("hidden");
+    divComida.classList.toggle("hidden");
+}
