@@ -160,63 +160,21 @@ async function precoAndFatias() {
 
 window.onload = function () {
     const params = new URLSearchParams(window.location.search)
-    const pizzaId = params.get('lancheId')
+    const lancheId = params.get('lancheId')
 
     const pizzaRef = db.collection('Pizza')
 
-    pizzaRef.doc(pizzaId).get().then((doc) => {
+    pizzaRef.doc(lancheId).get().then((doc) => {
         if (doc.exists) {
-            const pizzaData = doc.data()
+            const lancheData = doc.data()
 
             const nomeDaPizza = document.getElementById('nomeDoLanche')
-            nomeDaPizza.textContent = pizzaData.sabor
-        }
-    })
-
-    const favoritarButton = document.getElementById('favoritar')
-    const pathElement = favoritarButton.querySelectorAll('path')
-
-    auth.onAuthStateChanged((user) => {
-        if (user) {
-            favoritarButton.addEventListener('click', () => {
-                const userId = user.uid
-                adicionarLancheAoFavorito(userId, pizzaId)
-
-                pathElement.forEach(pathElement => {
-                    pathElement.setAttribute('fill', 'red')
-                })
-            })
+            nomeDaPizza.textContent = lancheData.sabor
         }
     })
 }
 
-function adicionarLancheAoFavorito(userId, pizzaId) {
-    const favoritosRef = db.collection('Favoritos');
 
-    favoritosRef.doc(userId).get().then((doc) => {
-        if (doc.exists) {
-            const favoritosData = doc.data();
-
-            if (!favoritosData.lanches.includes(pizzaId)) {
-                favoritosData.lanches.push(pizzaId);
-            }
-
-            favoritosRef.doc(userId).update({
-                lanches: favoritosData.lanches
-            })
-        }
-        else {
-            const novosFavoritos = {
-                lanches: [pizzaId]
-            };
-
-            favoritosRef.doc(userId).set(novosFavoritos)
-        }
-        alert('Lanche adicionado aos favoritos!');
-    }).catch((erro) => {
-        alert('Erro ao adicionar lanche aos favoritos!' + erro);
-    })
-}
 
 function adicionarQuantidadePizza() {
     quantidadePizza += 1;
