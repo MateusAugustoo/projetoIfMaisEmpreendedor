@@ -20,7 +20,7 @@ const renderCardBebidas = async () => {
 
     querySnapshot.forEach((doc) => {
         const bebidasData = doc.data();
-        const bebidasId = doc.id;
+        const lancheId = doc.id;
 
         const container = document.createElement('div');
         container.id = 'cardBebidas'
@@ -62,6 +62,10 @@ const renderCardBebidas = async () => {
         containerColorBackground.appendChild(image);
     
         sectionBebidas.appendChild(container);
+
+        container.addEventListener('click', () => {
+            window.location.href = `../bebidas/datailsBedidas.html?lancheId=${lancheId}`;
+        });
     });
 };
 renderCardBebidas();
