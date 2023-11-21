@@ -56,7 +56,8 @@ async function renderHamburguer() {
         sectionHamburguer.appendChild(hamburguerElement);
 
         hamburguerElement.addEventListener('click', () => {
-            window.location.href = `../../pagesProdutos/hamburguer/detalhesHamburguer.html?lancheId=${hamburguerId}`;
+            const collectionName = 'Hamburguer';
+            window.location.href = `../../pagesProdutos/hamburguer/detalhesHamburguer.html?collectionName=${collectionName}&lancheId=${hamburguerId}`;
         });
     });
 }

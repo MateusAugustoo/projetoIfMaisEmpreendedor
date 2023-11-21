@@ -48,7 +48,8 @@ async function renderPizza() {
         sectionPizza.appendChild(pizzaElement);
 
         pizzaElement.addEventListener('click', () => {
-            window.location.href = `../pagesProdutos/pizza/detalhesPizza.html?lancheId=${pizzaId}`;
+            const collectionName = 'Pizza';
+            window.location.href = `../pagesProdutos/pizza/detalhesPizza.html?collectionName=${collectionName}&lancheId=${pizzaId}`;
         });
     });
 }renderPizza();

@@ -55,7 +55,8 @@ async function renderDoces() {
         sectionDoces.appendChild(docesElement);
 
         docesElement.addEventListener('click', ()=>{
-            window.location.href = `../../pagesProdutos/doces/detalhesDoces.html?lancheId=${docesId}`;
+            const collectionName = 'Doces';
+            window.location.href = `../../pagesProdutos/doces/detalhesDoces.html?collectionName=${collectionName}&lancheId=${docesId}`;
         })
     })
 } renderDoces();
