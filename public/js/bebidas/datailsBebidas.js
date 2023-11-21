@@ -14,11 +14,3 @@ const auth = firebase.auth();
 
 const paramsUrl = new URLSearchParams(window.location.search);
 const id = paramsUrl.get('lancheId');
-
-const layoutDetailsBebidas = () =>{
-    const containerSelectBebidas = document.createElement('div');
-    containerSelectBebidas.className = 'flex relative w-[71px] h-24 items-center justify-center';
-
-    const inputBebidas = document.createElement('input');
-    
-};
