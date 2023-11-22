@@ -26,7 +26,7 @@ function saboresAdicionaisPizza() {
 
             const pizzaName = document.createElement('div');
             pizzaName.className = 'w-[114px] text-lg font-semibold fontText leading-snug tracking-widest ml-4 pt-2';
-            pizzaName.textContent = pizzaData.sabor;
+            pizzaName.textContent = pizzaData.nome;
             containerPizza.appendChild(pizzaName);
 
             const iconeAddSabor = document.createElement('button');
@@ -66,7 +66,7 @@ function saboresAdicionaisPizza() {
 
             const pizzaIngredientesBack = document.createElement('div');
             pizzaIngredientesBack.className = 'text-white font-semibold fontText w-32 text-[8px] flex';
-            pizzaIngredientesBack.textContent = pizzaData.ingrediente;
+            pizzaIngredientesBack.textContent = pizzaData.ingredientes;
 
             containerPizzaBack.appendChild(pizzaIngredientesBack);
 
@@ -169,7 +169,7 @@ window.onload = function () {
             const lancheData = doc.data()
 
             const nomeDaPizza = document.getElementById('nomeDoLanche')
-            nomeDaPizza.textContent = lancheData.sabor
+            nomeDaPizza.textContent = lancheData.nome
         }
     })
 }
