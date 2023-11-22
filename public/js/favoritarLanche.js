@@ -23,7 +23,7 @@ function authUserFavoritos() {
             });
         }
     });
-};authUserFavoritos();
+}; authUserFavoritos();
 
 function adicionarLancheAoFavorito(userId, lancheId, collectionName) {
     const favoritosRef = db.collection('Favoritos').doc(userId);
