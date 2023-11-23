@@ -17,23 +17,20 @@ const lancheId = paramsUrl.get('lancheId');
 const bebidasRef = db.collection('Bebidas').doc(lancheId);
 const getRefrigerantes = bebidasRef.collection('refrigerante').get()
 
-const main = document.querySelector('main');
+const main = document.getElementById('fromSelectBebidasRender');
+const img = document.getElementById('imageId');
+
+const formsSelectBebidas = document.createElement('form');
+formsSelectBebidas.className = 'flex justify-center gap-5';
+formsSelectBebidas.id = 'formBebidas';
 
 function renderBebidas() {
     getRefrigerantes.then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
+
             if (doc.exists) {
                 const bebidasData = doc.data();
                 const bebidasId = doc.id;
-
-                //Não esquecer de colocar seu elementos em ordem, seus childerns dentro do pai
-                const imageBebida = document.createElement('img');
-                imageBebida.src = bebidasData.imgPath;  
-                imageBebida.alt = `imagem de um(a) ${bebidasData.name}`;
-                imageBebida.className = 'mx-auto mb-9';
-
-                const formsSelectBebidas = document.createElement('form');
-                formsSelectBebidas.className = 'flex justify-center gap-5';
 
                 const containerSelect = document.createElement('div');
                 containerSelect.className = 'flex relative w-[71px] h-24 items-center justify-center';
@@ -45,19 +42,64 @@ function renderBebidas() {
                 input.id = bebidasId;
                 input.className = 'appearance-none w-[71px] h-24 bg-white rounded-[10px] shadow checked:bg-orange-600';
 
+
                 const label = document.createElement('label');
                 label.htmlFor = bebidasId;
                 label.className = 'absolute';
 
                 const imageSelect = document.createElement('img');
+                imageSelect.src = bebidasData.imgPath;
+                imageSelect.className = 'w-10 h-16';
 
+                label.appendChild(imageSelect);
 
-                
+                containerSelect.appendChild(input);
+                containerSelect.appendChild(label);
+
+                formsSelectBebidas.appendChild(containerSelect);
+
+                main.appendChild(formsSelectBebidas);
             }
         });
     }).catch((err) => {
-        
-    });    
-    
+        console.error(err);
+    });
+
 };
 renderBebidas();
+
+
+function changeImage() {
+    getRefrigerantes.then((result) => {
+        result.forEach((doc) => {
+            const bebidasData = doc.data();
+            const bebidasId = doc.id;
+
+            formsSelectBebidas.addEventListener('change', (e) => {
+                const input = e.target.id;
+
+                if (input === bebidasId) {
+                    img.src = bebidasData.imgPath;
+                }
+            });
+        });
+    }).catch((err) => {
+
+    });
+}
+changeImage();
+
+const btnBack = document.getElementById('btnVoltar');
+
+btnBack.addEventListener('click', () => {
+    history.back();
+});
+
+// switch (input) {
+//     case bebidasId:
+//         img.src = bebidasData.imgPath;
+//         break;
+
+//     default:
+//         break;
+// }
