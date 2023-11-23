@@ -24,7 +24,7 @@ async function renderDoces() {
 
         const docesImage = document.createElement('img');
         docesImage.className = 'w-[149.81px] h-[100px] top-[20px] absolute'
-        docesImage.src = docesData.pathPhoto;
+        docesImage.src = docesData.imgPath;
         docesElement.appendChild(docesImage);
 
         const docesName = document.createElement('p');
