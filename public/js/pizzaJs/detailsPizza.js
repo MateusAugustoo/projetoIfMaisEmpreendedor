@@ -26,7 +26,7 @@ function saboresAdicionaisPizza() {
 
             const pizzaName = document.createElement('div');
             pizzaName.className = 'w-[114px] text-lg font-semibold fontText leading-snug tracking-widest ml-4 pt-2';
-            pizzaName.textContent = pizzaData.nome;
+            pizzaName.textContent = `Pizza ${pizzaData.nome}`;
             containerPizza.appendChild(pizzaName);
 
             const iconeAddSabor = document.createElement('button');
