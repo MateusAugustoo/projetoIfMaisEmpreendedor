@@ -6,7 +6,7 @@ function productCheckdCart() {
   if (adicionarAoCarrinho() == false) {
     return;
   }
-  btnStyleAdiconadoAoCarrinho(); e7f473b90e8a830ad5f85a1485fa0fc57d3d5319
+  btnStyleAdiconadoAoCarrinho();
 }
 
 function adicionarAoCarrinho() {
