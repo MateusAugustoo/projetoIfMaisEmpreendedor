@@ -31,6 +31,12 @@ async function renderPizza() {
         pizzaCircle.className = 'w-[142.86px] h-[142px] left-[190.14px] top-0 absolute bg-orange-600 rounded-[20px]';
         pizzaElement.appendChild(pizzaCircle);
 
+        const pizzaImg = document.createElement('img');
+        pizzaImg.className = 'flex justify-center items-center relative w-auto h-auto';
+        pizzaImg.src = pizzaData.imgPath;
+
+        pizzaCircle.appendChild(pizzaImg);
+
         const pizzaPrice = document.createElement('div');
         pizzaPrice.className = 'w-[90.47px] left-[14.08px] top-[108px] absolute text-center';
         pizzaElement.appendChild(pizzaPrice);
