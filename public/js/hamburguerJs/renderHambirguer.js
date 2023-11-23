@@ -25,7 +25,7 @@ async function renderHamburguer() {
 
         const hamburguerImage = document.createElement('img');
         hamburguerImage.className = 'w-[134.80px] h-[116.21px] left-[10px] top-[20px] absolute'
-        hamburguerImage.src = hamburguerData.pathPhoto;
+        hamburguerImage.src = hamburguerData.imgPath;
         hamburguerElement.appendChild(hamburguerImage);
 
         const hamburguerName = document.createElement('p');
