@@ -44,7 +44,7 @@ function renderizarFavoritos(favoritos) {
                 const lancheId = doc.id
                 //refazer o card de favoritos para a Pizza
                 const pizzaElement = document.createElement('div');
-                pizzaElement.className = 'w-[333px] h-[142px] relative mx-8 mt-5';
+                pizzaElement.className = 'w-[333px] h-[142px] relative mx-8 mt-5 mx-auto';
 
                 const pizzaBackground = document.createElement('div');
                 pizzaBackground.className = 'w-[333px] h-[142px] left-0 top-0 absolute bg-white rounded-[20px] shadow';
@@ -93,7 +93,7 @@ function renderizarFavoritos(favoritos) {
                 const lancheId = doc.id
                 //card de favoritos para a Hamburguer
                 const hamElement = document.createElement('div');
-                hamElement.className = 'w-[333px] h-[142px] relative mx-8 mt-5';
+                hamElement.className = 'w-[333px] h-[142px] relative mx-8 mt-5 mx-auto';
 
                 const hamBackground = document.createElement('div');
                 hamBackground.className = 'w-[333px] h-[142px] left-0 top-0 absolute bg-white rounded-[20px] shadow';
