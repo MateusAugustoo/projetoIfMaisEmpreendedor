@@ -91,15 +91,25 @@ changeImage();
 
 const btnBack = document.getElementById('btnVoltar');
 
+const btnAdicionarQauntidade = document.getElementById('addQuantLanche');
+let quantidadeLanche = 0;
+const btnRemoverQuantidade = document.getElementById('removeQuantLanche');
+
+
+function addQauntidadeLanche() {
+    quantidadeLanche += 1;
+    document.getElementById('quantidadeLanche').innerHTML = quantidadeLanche;
+}
+
+function removerQuantidadeLanche() {
+    if (quantidadeLanche > 0) {
+        quantidadeLanche -= 1;
+        document.getElementById('quantidadeLanche').innerHTML = quantidadeLanche;
+
+    }
+}
+
 btnBack.addEventListener('click', () => {
     history.back();
 });
 
-// switch (input) {
-//     case bebidasId:
-//         img.src = bebidasData.imgPath;
-//         break;
-
-//     default:
-//         break;
-// }

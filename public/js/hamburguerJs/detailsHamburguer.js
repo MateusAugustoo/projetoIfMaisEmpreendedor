@@ -12,7 +12,7 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const auth = firebase.auth();
 
-window.onload = function () {
+function condeutoDetails() {
     const params = new URLSearchParams(window.location.search);
     const hamburguerId = params.get('lancheId');
     const nomeHamburguer = document.getElementById('nomeDoLanche');
@@ -29,7 +29,7 @@ window.onload = function () {
             nomeHamburguer.textContent = hamburguerData.nome;
             precoHamburguer.textContent = `R$ ${hamburguerData.preco}`;
             descricaoHamburguer.textContent = hamburguerData.ingredientes;
-            imagemHamburguer.src = hamburguerData.pathPhoto;
+            imagemHamburguer.src = hamburguerData.imgPath;
         }
     });
 
@@ -49,6 +49,7 @@ window.onload = function () {
         }
     })
 }
+condeutoDetails();
 
 
 function adicionarLancheAoFavorito(userId, hamburguerId) {

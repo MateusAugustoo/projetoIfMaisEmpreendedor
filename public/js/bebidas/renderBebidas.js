@@ -64,7 +64,7 @@ const renderCardBebidas = async () => {
         sectionBebidas.appendChild(container);
 
         container.addEventListener('click', () => {
-            window.location.href = `../bebidas/datailsBedidas.html?lancheId=${lancheId}`;
+            window.location.href = `../bebidas/datailsBebidas.html?lancheId=${lancheId}`;
         });
     });
 };
