@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .fontText {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .fonteHeader {
+            font-family: 'Lobster', cursive;
+        }
+    </style>
+    <title>Detalhes bebidas</title>
+</head>
+
+<body class="max-sm: bg-slate-100 text-orange-600 h-screen px-5 py-5 relative">
+    <header class="flex justify-between items-center">
+        <img src="../../iconsFood/voltar.svg" alt="icone de volta a page anterior" id="btnVoltar">
+        <h1 class="w-52 text-center text-3xl font-bold fontText">Refrigerente Latinha</h1>
+        <img src="../../iconsFood/favorito.svg" alt="icone de adicionar lanche ao favorito">
+    </header>
+
+    <main>
+
+        <img class="mx-auto mb-9" src="../../images/cocaColaLata.png" alt="imagem do refiregante em lata" id="imageId">
+
+        <section id="fromSelectBebidasRender"></section>
+
+        <div class="w-[236px] h-[52px] bg-white shadow rounded-[20px] m-auto flex justify-around items-center mt-11">
+            <button id="removerQuantLanche" onclick="removerQuantidadeLanche()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="5" fill="none" viewBox="0 0 23 5">
+                    <path stroke="#606264" stroke-linecap="round" stroke-width="3.396" d="M2.618 2.5h17.877" />
+                </svg>
+            </button>
+            <div class="w-[42px] h[42px] bg-white rounded-[10px] shadow text-center">
+                <span class="w-3 h-[22px] text-3xl font-bold fontText" id="quantidadeLanche">0</span>
+            </div>
+            <button id="addQuantLanche" onclick="addQauntidadeLanche()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="none" viewBox="0 0 23 23">
+                    <path stroke="#D95A11" stroke-linecap="round" stroke-width="4.075"
+                        d="M2.686 11.5h17.696m-8.849 8.75V2.75" />
+                </svg>
+            </button>
+        </div>
+
+    </main>
+
+    <footer class="flex flex-nowrap justify-between mt-16">
+        <p class="fontText text-[28px] font-bold">R$ 5.99</p>
+        <button id="btnBackground"
+            class="w-52 h-11 bg-orange-600 rounded-2xl shadow flex text-white font-bold text-xs fontText justify-center items-center gap-2"
+            onclick='productCheckdCart()'>
+            <img id="btnCartIcon" src="../../iconsFood/carrinho.svg" alt="icone de adicionar o lanche ao carrinho">
+            <span id="btnText">Adicionar ao Carrinho</span>
+        </button>
+    </footer>
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore-compat.js"></script>
+<script src="../../js/bebidas/datailsBebidas.js"></script>
+
+</html>
