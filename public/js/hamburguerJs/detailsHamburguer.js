@@ -3,7 +3,7 @@ firebase.initializeApp(window.firebaseConfig);
 const db = firebase.firestore();
 const auth = firebase.auth();
 
-function condeutoDetails() {
+function conteudoDetails() {
     const params = new URLSearchParams(window.location.search);
     const hamburguerId = params.get('lancheId');
     const nomeHamburguer = document.getElementById('nomeDoLanche');
