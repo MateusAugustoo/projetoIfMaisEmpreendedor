@@ -138,7 +138,7 @@ function renderProdutosCarrinho() {
 
         const lableLanche = document.createElement('label');
         lableLanche.className = 'text-gray-800 text-xs font-semibold ml-2';
-        lableLanche.textContent = `${lanches.nome} - ${lanches.tamanho}`;
+        lableLanche.textContent = `${lanches.nome}  ${lanches.tamanho}`;
 
 
         tdSelectLanches.appendChild(inputLanche);
@@ -152,7 +152,7 @@ function renderProdutosCarrinho() {
         trLanche.appendChild(tdquantidadeLanche);
 
         const tdprecoLanche = document.createElement('td');
-        tdprecoLanche.className = 'text-gray-800 text-xs font-semibold'
+        tdprecoLanche.className = 'text-gray-800 text-xs font-semibold';
 
         const calc = lanches.preco * lanches.quantidade;
         tdprecoLanche.textContent = `R$ ${calc}`;
