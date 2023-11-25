@@ -55,12 +55,7 @@
 
     <footer class="flex flex-nowrap justify-between mt-16">
         <p class="fontText text-[28px] font-bold">R$ 5.99</p>
-        <button id="btnBackground"
-            class="w-52 h-11 bg-orange-600 rounded-2xl shadow flex text-white font-bold text-xs fontText justify-center items-center gap-2"
-            onclick='productCheckdCart()'>
-            <img id="btnCartIcon" src="../../iconsFood/carrinho.svg" alt="icone de adicionar o lanche ao carrinho">
-            <span id="btnText">Adicionar ao Carrinho</span>
-        </button>
+        <div id="btnAddCart"></div>
     </footer>
 </body>
 
@@ -69,5 +64,7 @@
 <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore-compat.js"></script>
 <script src="../../js/keys.firebase.js"></script>
 <script src="../../js/bebidas/datailsBebidas.js"></script>
+
+<script src="../../js/components/bottonCarrinho.js"></script>
 
 </html>
