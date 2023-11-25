@@ -40,7 +40,7 @@ function conteudoDetails() {
         }
     })
 }
-condeutoDetails();
+conteudoDetails();
 
 
 function adicionarLancheAoFavorito(userId, hamburguerId) {
