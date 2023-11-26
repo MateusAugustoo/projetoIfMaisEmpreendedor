@@ -93,19 +93,8 @@
                     <label for="tamanhoGG" class="tamanho-comida shadow-lg font-bold bg-white">GG</label>
                 </span>
             </form>
-            <div class="w-28 h-9 bg-white rounded-2xl shadow-lg flex flex-row justify-around items-center relative">
-                <button id="adicionarPizza" onclick="renoverQuantidadePizza()">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="5" fill="none" viewBox="0 0 23 5">
-                        <path stroke="#606264" stroke-linecap="round" stroke-width="3.396" d="M2.618 2.5h17.877" />
-                    </svg>
-                </button>
-                <span id="quantidadeLanche" class="text-xl font-bold fontText"></span>
-                <button id="renoverPizza" onclick="adicionarQuantidadePizza()">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="none" viewBox="0 0 23 23">
-                        <path stroke="#D95A11" stroke-linecap="round" stroke-width="4.075"
-                            d="M2.686 11.5h17.696m-8.849 8.75V2.75" />
-                    </svg>
-                </button>
+            <div id="containerBtn" class="w-32 h-9">
+                
             </div>
         </div>
 
@@ -133,6 +122,7 @@
 <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore-compat.js"></script>
 <script src="../../js/keys.firebase.js"></script>
+<script src="../../js/components/adicionarOuRenoverQuantidade.js"></script>
 
 <script src="../../js/pizzaJs/detailsPizza.js"></script>
 
