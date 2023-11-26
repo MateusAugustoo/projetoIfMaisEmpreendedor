@@ -110,7 +110,6 @@ const fromPizza = document.getElementById('formPizza')
 let precoPizza = document.getElementById('precoLanche')
 let quantidadeFatias = document.getElementById('quantidadeFatias')
 let quantidadesSabor = document.getElementById('quantidadeSabor')
-let quantidadePizza = document.getElementById('quantidadeLanche').textContent = 0;
 
 async function precoAndFatias() {
     await precoPizzaRefDb.get().then((querySnapshot) => {
@@ -163,21 +162,6 @@ window.onload = function () {
             nomeDaPizza.textContent = lancheData.nome
         }
     })
-}
-
-
-
-function adicionarQuantidadePizza() {
-    quantidadePizza += 1;
-    document.getElementById('quantidadeLanche').innerHTML = quantidadePizza;
-}
-
-function renoverQuantidadePizza() {
-    if (quantidadePizza > 0) {
-        quantidadePizza -= 1;
-        document.getElementById('quantidadeLanche').innerHTML = quantidadePizza;
-
-    }
 }
 
 const arrowBackHome = document.getElementById('arrow-back-home')
