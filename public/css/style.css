@@ -1097,8 +1097,12 @@ video {
   height: 100vh;
 }
 
-.h-20 {
-  height: 5rem;
+.h-\[\] {
+  height: ;
+}
+
+.h-\[52\] {
+  height: 52;
 }
 
 .min-h-full {
@@ -1123,10 +1127,6 @@ video {
 
 .w-24 {
   width: 6rem;
-}
-
-.w-28 {
-  width: 7rem;
 }
 
 .w-3 {
@@ -1337,8 +1337,12 @@ video {
   width: 100vw;
 }
 
-.w-2 {
-  width: 0.5rem;
+.w-\[\] {
+  width: ;
+}
+
+.w-\[26\] {
+  width: 26;
 }
 
 .flex-1 {
