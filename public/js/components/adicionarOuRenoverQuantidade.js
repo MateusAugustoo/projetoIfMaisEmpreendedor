@@ -1,5 +1,3 @@
-
-
 function addAndRenoverQuantity() {
     const containerBtn = document.getElementById('containerBtn');
 
@@ -12,10 +10,10 @@ function addAndRenoverQuantity() {
     <path stroke="#606264" stroke-linecap="round" stroke-width="3.396" d="M2.618 2.5h17.877" />
 </svg>`;
 
-    const containerQunatidade = document.createElement('span');
-    containerQunatidade.className = 'text-xl font-bold fontTetxt';
-    containerQunatidade.id = 'quantidadeLanche';
-    containerQunatidade.textContent = 0;
+    const containerQuantidade = document.createElement('span');
+    containerQuantidade.className = 'text-xl font-bold fontTetxt';
+    containerQuantidade.id = 'quantidadeLanche';
+    containerQuantidade.textContent = 0;
 
     const btnRemoveQuantity = document.createElement('button');
     btnRemoveQuantity.onclick = adicionarQuantidadeLanche;
@@ -27,7 +25,7 @@ function addAndRenoverQuantity() {
 
 
     container.appendChild(btnAddQuantity);
-    container.appendChild(containerQunatidade);
+    container.appendChild(containerQuantidade);
     container.appendChild(btnRemoveQuantity);
 
     containerBtn.appendChild(container);
