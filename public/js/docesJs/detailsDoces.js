@@ -23,7 +23,7 @@ window.onload = function () {
             descricaoDoces.textContent = docesData.ingredientes;
 
             const imageDoces = document.getElementById('imageDoce');
-            imageDoces.src = docesData.pathPhoto;
+            imageDoces.src = docesData.imgPath;
 
         }
     })
@@ -71,23 +71,6 @@ function adicionarLancheAoFavorito(userId, docesId) {
     }).catch((error) => {
         console.log(error);
     });
-}
-
-const btnAdicionarQauntidade = document.getElementById('addQuantLanche');
-let quantidadeLanche = 0;
-const btnRemoverQuantidade = document.getElementById('removeQuantLanche');
-
-function addQauntidadeLanche() {
-    quantidadeLanche++;
-    document.getElementById('quantidadeLanche').textContent = quantidadeLanche;
-}
-
-function removerQuantidadeLanche() {
-    if (quantidadeLanche > 0) {
-        quantidadeLanche--;
-        document.getElementById('quantidadeLanche').textContent = quantidadeLanche;
-    }
-
 }
 
 

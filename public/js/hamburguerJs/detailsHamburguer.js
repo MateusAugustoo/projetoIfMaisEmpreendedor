@@ -71,23 +71,6 @@ function adicionarLancheAoFavorito(userId, hamburguerId) {
     });
 }
 
-const btnAdicionarQauntidade = document.getElementById('addQuantLanche');
-let quantidadeLanche = 0;
-const btnRemoverQuantidade = document.getElementById('removeQuantLanche');
-
-function addQauntidadeLanche() {
-    quantidadeLanche++;
-    document.getElementById('quantidadeLanche').textContent = quantidadeLanche;
-}
-
-function removerQuantidadeLanche() {
-    if (quantidadeLanche > 0) {
-        quantidadeLanche--;
-        document.getElementById('quantidadeLanche').textContent = quantidadeLanche;
-    }
-
-}
-
 const arrowBackPage = document.getElementById('arrowBackPage');
 arrowBackPage.addEventListener('click', () => {
     history.back();
