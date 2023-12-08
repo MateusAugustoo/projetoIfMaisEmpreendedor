@@ -13,7 +13,13 @@ formLogin.addEventListener("submit", function (event) {
   auth.signInWithEmailAndPassword(email, senha).then(() => {
     const user = auth.currentUser;
     const userId = user.uid;
-    window.location.href = `../screens/home.html?uid=${userId}`;
+    const userEmail = user.email;
+    
+    if (userEmail === 'pizzaramosadmin@gmail.com') {
+      window.location.href = `../dashboard/dashboard.adm.html?uid=${userId}`;
+    } else {
+      window.location.href = `../screens/home.html?uid=${userId}`;
+    }
   }).catch(() => {
     alert("Email ou senha incorretos");
   });
