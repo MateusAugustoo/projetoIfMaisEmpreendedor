@@ -10,7 +10,11 @@ formLogin.addEventListener("submit", function (event) {
   const email = document.querySelector('[name="emailLogin"]').value;
   const senha = document.querySelector('[name="senhaLogin"]').value;
 
-  auth.signInWithEmailAndPassword(email, senha).catch(() => {
+  auth.signInWithEmailAndPassword(email, senha).then(() => {
+    const user = auth.currentUser;
+    const userId = user.uid;
+    window.location.href = `../screens/home.html?uid=${userId}`;
+  }).catch(() => {
     alert("Email ou senha incorretos");
   });
 });
