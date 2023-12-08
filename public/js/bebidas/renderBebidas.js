@@ -24,13 +24,6 @@ const renderCardBebidas = async () => {
         const containerImageAdd = document.createElement('button');
         containerImageAdd.className = 'w-[30px] h-[30px] left-[294px] top-[185px] absolute';
     
-        const imageIconAdd = document.createElement('img');
-        imageIconAdd.className = 'w-[30px] h-[30px] left-[294px] top-[185px] absolute';
-        imageIconAdd.src = '../../iconsFood/add_roudond.svg';
-        imageIconAdd.alt = 'icone de adicionar bebidas';
-        containerImageAdd.appendChild(imageIconAdd);
-        containerColorBackground.appendChild(containerImageAdd);
-    
         const titleCard = document.createElement('p');
         titleCard.className = 'w-[133px] left-[188px] top-[13px] absolute text-xl font-semibold fontText';
         titleCard.textContent = bebidasData.title;
