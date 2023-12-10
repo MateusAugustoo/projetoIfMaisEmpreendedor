@@ -42,35 +42,6 @@ function conteudoDetails() {
 }
 conteudoDetails();
 
-
-function adicionarLancheAoFavorito(userId, hamburguerId) {
-    const favoritosRef = db.collection('Favoritos');
-
-    favoritosRef.doc(userId).get().then((doc) => {
-        if (doc.exists) {
-            const favoritosData = doc.data();
-
-            if (!favoritosData.lanches.includes(hamburguerId)) {
-                favoritosData.lanches.push(hamburguerId);
-            }
-
-            favoritosRef.doc(userId).update({
-                lanches: favoritosData.lanches
-            })
-        }
-        else {
-            const novosFavoritos = {
-                lanches: [hamburguerId]
-            };
-
-            favoritosRef.doc(userId).set(novosFavoritos);
-        }
-        alert('Hamburguer adicionado aos favoritos');
-    }).catch((error) => {
-        console.log(error);
-    });
-}
-
 const arrowBackPage = document.getElementById('arrowBackPage');
 arrowBackPage.addEventListener('click', () => {
     history.back();
