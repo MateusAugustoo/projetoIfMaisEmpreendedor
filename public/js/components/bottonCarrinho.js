@@ -3,7 +3,7 @@ const btn = document.getElementById('btnAddCart')
 function btnCarrinho(){
         const button = document.createElement('button');
         button.id = 'btnBackground';
-        button.classList.add('w-52', 'h-11', 'bg-orange-600', 'rounded-2xl', 'shadow', 'flex', 'text-white', 'font-bold', 'text-xs', 'fontText', 'justify-center', 'items-center', 'gap-2');
+  button.classList.add('w-52', 'h-11', 'bg-orange-600', 'rounded-2xl', 'shadow', 'flex', 'text-white', 'font-bold', 'text-xs', 'fontText', 'justify-center', 'items-center', 'gap-2');
         button.onclick = productCheckdCart;
 
         const img = document.createElement('img');
