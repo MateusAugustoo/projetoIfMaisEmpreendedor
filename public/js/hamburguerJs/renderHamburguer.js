@@ -12,7 +12,7 @@ async function renderHamburguer() {
         hamburguerId = doc.id;
 
         const hamburguerElement = document.createElement('div');
-        hamburguerElement.className = 'w-[155px] h-[222px] relative bg-white shadow rounded-xl mx-7';
+        hamburguerElement.className = 'w-[155px] h-[222px] relative bg-white shadow rounded-xl';
 
         const hamburguerImage = document.createElement('img');
         hamburguerImage.className = 'w-[134.80px] h-[116.21px] left-[10px] top-[20px] absolute'
