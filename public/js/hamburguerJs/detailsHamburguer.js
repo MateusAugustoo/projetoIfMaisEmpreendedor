@@ -6,9 +6,9 @@ const auth = firebase.auth();
 function conteudoDetails() {
     const params = new URLSearchParams(window.location.search);
     const hamburguerId = params.get('lancheId');
+    const cardIngredientes = document.getElementById('cardsIngredientes');
     const nomeHamburguer = document.getElementById('nomeDoLanche');
     const precoHamburguer = document.getElementById('precoLanche');
-    const descricaoHamburguer = document.getElementById('ingredientesHamburguer');
     const imagemHamburguer = document.getElementById('imageHamburguer');
 
     const hamburguersRef = db.collection('Hamburguer');
@@ -16,11 +16,15 @@ function conteudoDetails() {
     hamburguersRef.doc(hamburguerId).get().then((doc) => {
         if (doc.exists) {
             const hamburguerData = doc.data();
+            const hamburguerIngredientes = hamburguerData.ingredientes;
 
             nomeHamburguer.textContent = hamburguerData.nome;
             precoHamburguer.textContent = `R$ ${hamburguerData.preco}`;
-            descricaoHamburguer.textContent = hamburguerData.ingredientes;
             imagemHamburguer.src = hamburguerData.imgPath;
+
+            hamburguerIngredientes.forEach(res =>{
+                console.log(res);
+            })
         }
     });
 
