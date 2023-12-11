@@ -102,17 +102,16 @@ function layoutCardIngrediente(hamburguerIngrediente) {
     container.appendChild(containerAdicionaisDescricao);
 
     cardIngredientes.appendChild(container);
-}
 
-function cardIngredienteBack(hamburguerIngrediente) {
+    //card is back
     const containerCardBack = document.createElement('div');
     containerCardBack.className = 'w-48 h-28 bg-zinc-600 rounded-[10px] shadow';
 
     const from = document.createElement('form');
     from.className = 'flex justify-around items-center py-2';
 
-    const label = document.createElement('label');
-    label.className = 'text-white text-lg font-lg font-bold fontText';
+    const labelBack = document.createElement('label');
+    labelBack.className = 'text-white text-lg font-lg font-bold fontText';
 
     const input = document.createElement('input');
     input.className = "w-5 h-5 apparence-none bg-white border border-orange-600 rounded checked:bg-orange-600 checked:bg-[url('../../iconsFood/item_marcado.svg')] bg-center transition duration-200";
@@ -134,10 +133,9 @@ function cardIngredienteBack(hamburguerIngrediente) {
     const imgClose = document.createElement('img');
     imgClose.src = '../../images/iconSetaDark.png';
     imgClose.className = 'py-6 mx-auto';
-}
 
-function cardDescricao(hamburguerIngrediente) {
-    const containerDescricao = document.createElement('div');
+    //card description
+    const containerDescricaoBack = document.createElement('div');
     containerDescricao.className = 'w-48 h-28 bg-orange-600 rounded-[10px] shadow';
 
     const nameIngrediente = document.createElement('p');
@@ -149,7 +147,7 @@ function cardDescricao(hamburguerIngrediente) {
     const btnCloseDesc = document.createElement('div');
     btnCloseDesc.className = 'w-8 h-16 bg-white absolute right-0 top-12 rounded-br-[10px]';
 
-    const imgClose = document.createElement('img');
-    imgClose.src = '../../images/iconeDescricaoOpen.png';
-    imgClose.className = 'mx-auto py-5';
+    const imgCloseDesc = document.createElement('img');
+    imgCloseDesc.src = '../../images/iconeDescricaoOpen.png';
+    imgCloseDesc.className = 'mx-auto py-5';
 }
