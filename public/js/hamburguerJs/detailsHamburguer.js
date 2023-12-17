@@ -104,50 +104,50 @@ function layoutCardIngrediente(hamburguerIngrediente) {
     cardIngredientes.appendChild(container);
 
     //card is back
-    const containerCardBack = document.createElement('div');
-    containerCardBack.className = 'w-48 h-28 bg-zinc-600 rounded-[10px] shadow';
+    // const containerCardBack = document.createElement('div');
+    // containerCardBack.className = 'w-48 h-28 bg-zinc-600 rounded-[10px] shadow';
 
-    const from = document.createElement('form');
-    from.className = 'flex justify-around items-center py-2';
+    // const from = document.createElement('form');
+    // from.className = 'flex justify-around items-center py-2';
 
-    const labelBack = document.createElement('label');
-    labelBack.className = 'text-white text-lg font-lg font-bold fontText';
+    // const labelBack = document.createElement('label');
+    // labelBack.className = 'text-white text-lg font-lg font-bold fontText';
 
-    const input = document.createElement('input');
-    input.className = "w-5 h-5 apparence-none bg-white border border-orange-600 rounded checked:bg-orange-600 checked:bg-[url('../../iconsFood/item_marcado.svg')] bg-center transition duration-200";
-    input.type = 'checkbox';
+    // const input = document.createElement('input');
+    // input.className = "w-5 h-5 apparence-none bg-white border border-orange-600 rounded checked:bg-orange-600 checked:bg-[url('../../iconsFood/item_marcado.svg')] bg-center transition duration-200";
+    // input.type = 'checkbox';
 
-    const preco = document.createElement('div');
-    preco.className = 'w-20 text-center mx-auto relative text-white font-bold text-base';
+    // const preco = document.createElement('div');
+    // preco.className = 'w-20 text-center mx-auto relative text-white font-bold text-base';
 
-    const addOrRenoveQuantidade = document.createElement('div');
-    addOrRenoveQuantidade.id = 'containerBtn';
-    addOrRenoveQuantidade.className = 'w-[105px] h-9 mx-auto';
+    // const addOrRenoveQuantidade = document.createElement('div');
+    // addOrRenoveQuantidade.id = 'containerBtn';
+    // addOrRenoveQuantidade.className = 'w-[105px] h-9 mx-auto';
 
-    const containerBtnCloseAdicionais = document.createElement('div');
-    containerBtnCloseAdicionais.className = 'w-8 h-16 relative';
+    // const containerBtnCloseAdicionais = document.createElement('div');
+    // containerBtnCloseAdicionais.className = 'w-8 h-16 relative';
 
-    const btnClose = document.createElement('button');
-    btnClose.className = 'w-8 h-16 absolute -top-14 bg-white rounded-tr-[10px] rounded-br-[10px]';
+    // const btnClose = document.createElement('button');
+    // btnClose.className = 'w-8 h-16 absolute -top-14 bg-white rounded-tr-[10px] rounded-br-[10px]';
 
-    const imgClose = document.createElement('img');
-    imgClose.src = '../../images/iconSetaDark.png';
-    imgClose.className = 'py-6 mx-auto';
+    // const imgClose = document.createElement('img');
+    // imgClose.src = '../../images/iconSetaDark.png';
+    // imgClose.className = 'py-6 mx-auto';
 
-    //card description
-    const containerDescricaoBack = document.createElement('div');
-    containerDescricao.className = 'w-48 h-28 bg-orange-600 rounded-[10px] shadow';
+    // //card description
+    // const containerDescricaoBack = document.createElement('div');
+    // containerDescricao.className = 'w-48 h-28 bg-orange-600 rounded-[10px] shadow';
 
-    const nameIngrediente = document.createElement('p');
-    nameIngrediente.className = 'text-white text-lg font-bold fontText p-2';
+    // const nameIngrediente = document.createElement('p');
+    // nameIngrediente.className = 'text-white text-lg font-bold fontText p-2';
 
-    const descricao = document.createElement('p');
-    descricao.className = 'text-white text-sm font-medium fontText px-2';
+    // const descricao = document.createElement('p');
+    // descricao.className = 'text-white text-sm font-medium fontText px-2';
 
-    const btnCloseDesc = document.createElement('div');
-    btnCloseDesc.className = 'w-8 h-16 bg-white absolute right-0 top-12 rounded-br-[10px]';
+    // const btnCloseDesc = document.createElement('div');
+    // btnCloseDesc.className = 'w-8 h-16 bg-white absolute right-0 top-12 rounded-br-[10px]';
 
-    const imgCloseDesc = document.createElement('img');
-    imgCloseDesc.src = '../../images/iconeDescricaoOpen.png';
-    imgCloseDesc.className = 'mx-auto py-5';
+    // const imgCloseDesc = document.createElement('img');
+    // imgCloseDesc.src = '../../images/iconeDescricaoOpen.png';
+    // imgCloseDesc.className = 'mx-auto py-5';
 }
