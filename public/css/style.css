@@ -613,10 +613,6 @@ video {
   position: relative;
 }
 
-.-top-10 {
-  top: -2.5rem;
-}
-
 .-top-14 {
   top: -3.5rem;
 }
@@ -813,60 +809,60 @@ video {
   top: 76px;
 }
 
-.right-10 {
-  right: 2.5rem;
+.-top-1 {
+  top: -0.25rem;
 }
 
-.left-10 {
-  left: 2.5rem;
+.-top-10 {
+  top: -2.5rem;
 }
 
-.left-2 {
-  left: 0.5rem;
-}
-
-.left-5 {
-  left: 1.25rem;
-}
-
-.left-20 {
-  left: 5rem;
-}
-
-.top-5 {
-  top: 1.25rem;
-}
-
-.top-2 {
-  top: 0.5rem;
-}
-
-.left-4 {
-  left: 1rem;
-}
-
-.left-3 {
-  left: 0.75rem;
+.-top-0 {
+  top: -0px;
 }
 
 .top-10 {
   top: 2.5rem;
 }
 
-.-top-4 {
-  top: -1rem;
+.top-11 {
+  top: 2.75rem;
+}
+
+.-top-11 {
+  top: -2.75rem;
+}
+
+.right-10 {
+  right: 2.5rem;
+}
+
+.right-1 {
+  right: 0.25rem;
+}
+
+.-right-1 {
+  right: -0.25rem;
+}
+
+.right-12 {
+  right: 3rem;
+}
+
+.-right-12 {
+  right: -3rem;
+}
+
+.top-14 {
+  top: 3.5rem;
+}
+
+.top-16 {
+  top: 4rem;
 }
 
 .-top-16 {
   top: -4rem;
-}
-
-.-top-20 {
-  top: -5rem;
-}
-
-.-left-1 {
-  left: -0.25rem;
 }
 
 .m-auto {
@@ -876,6 +872,11 @@ video {
 .mx-10 {
   margin-left: 2.5rem;
   margin-right: 2.5rem;
+}
+
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .mx-4 {
@@ -945,6 +946,10 @@ video {
   margin-left: 1rem;
 }
 
+.ml-5 {
+  margin-left: 1.25rem;
+}
+
 .ml-7 {
   margin-left: 1.75rem;
 }
@@ -959,6 +964,10 @@ video {
 
 .mt-11 {
   margin-top: 2.75rem;
+}
+
+.mt-12 {
+  margin-top: 3rem;
 }
 
 .mt-16 {
@@ -1247,10 +1256,6 @@ video {
 
 .w-\[100\%\] {
   width: 100%;
-}
-
-.w-\[105px\] {
-  width: 105px;
 }
 
 .w-\[10px\] {
@@ -1707,10 +1712,6 @@ video {
   padding: 0.25rem;
 }
 
-.p-2 {
-  padding: 0.5rem;
-}
-
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -1751,19 +1752,9 @@ video {
   padding-bottom: 1.25rem;
 }
 
-.py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
 .py-7 {
   padding-top: 1.75rem;
   padding-bottom: 1.75rem;
-}
-
-.px-3 {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
 }
 
 .pb-24 {
@@ -1936,12 +1927,6 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.shadow-2xl {
-  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
 .shadow-inner {
   --tw-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
   --tw-shadow-colored: inset 0 2px 4px 0 var(--tw-shadow-color);
@@ -1978,20 +1963,8 @@ video {
   transition-duration: 150ms;
 }
 
-.delay-150 {
-  transition-delay: 150ms;
-}
-
 .duration-200 {
   transition-duration: 200ms;
-}
-
-.duration-500 {
-  transition-duration: 500ms;
-}
-
-.duration-100 {
-  transition-duration: 100ms;
 }
 
 .ease-in-out {
@@ -2001,10 +1974,6 @@ video {
 .checked\:bg-orange-600:checked {
   --tw-bg-opacity: 1;
   background-color: rgb(234 88 12 / var(--tw-bg-opacity));
-}
-
-.checked\:bg-\[url\(\'\.\.\/\.\.\/iconsFood\/item_marcado\.svg\'\)\]:checked {
-  background-image: url('../../iconsFood/item_marcado.svg');
 }
 
 .checked\:bg-\[url\(\'\.\.\/iconsFood\/item_marcado\.svg\'\)\]:checked {
