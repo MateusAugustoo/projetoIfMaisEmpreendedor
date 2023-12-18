@@ -4,7 +4,7 @@ const db = firebase.firestore();
 const auth = firebase.auth();
 
 const cardIngredientes = document.getElementById('cardAdicionais');
-cardIngredientes.className = 'flex gap-6';
+cardIngredientes.className = 'flex gap-6 overflow-auto px-5 py-5';
 
 function conteudoDetails() {
     const params = new URLSearchParams(window.location.search);
@@ -115,10 +115,9 @@ function layoutCardIngrediente(hamburguerIngrediente) {
 
     cardIngredientes.appendChild(elementCard);
 
-    preco.className = 'w-20 text-center mx-auto relative text-white font-bold text-base';
-
+    // card is back
     const containerCardBack = document.createElement('div');
-    containerCardBack.className = 'w-48 h-28 bg-zinc-600 rounded-[10px] shadow hidden';
+    containerCardBack.className = 'w-48 h-28 bg-zinc-600 rounded-[10px] shadow hidden relative';
 
     const form = document.createElement('form');
     form.className = 'flex justify-around items-center py-2';
@@ -137,18 +136,18 @@ function layoutCardIngrediente(hamburguerIngrediente) {
 
     const preco = document.createElement('div');
     preco.className = 'w-20 text-center mx-auto text-lg relative text-white font-bold text-base';
-    preco.textContent = `R$ 1,99`;
+    preco.textContent = `R$ ${hamburguerIngrediente.valor}`;
 
     containerCardBack.appendChild(preco);
-    form.appendChild(addOrRenoveQuantidade);
+
     containerCardBack.appendChild(form);
 
     const btnOcultar = document.createElement('button');
+    btnOcultar.className = 'bg-white w-8 h-16 absolute top-12 rounded-tr-[10px] rounded-bl-[10px]';
 
     const imgSetaOcultar = document.createElement('img');
-    imgSetaOcultar.className = 'relative -top-16 clock  ';
-    imgSetaOcultar.src = '../../images/iconeSetaBranca.svg';
-    imgSetaOcultar.alt = 'Icone para ocultar os adicionais';
+    imgSetaOcultar.src = '../../images/iconSetaDark.png';
+    imgSetaOcultar.className = 'mx-auto';
 
     btnOcultar.addEventListener("click", () => {
         container.classList.remove('hidden');
@@ -168,15 +167,19 @@ function layoutCardIngrediente(hamburguerIngrediente) {
 
     //card is back orange
     const containerCardDescricao = document.createElement('div');
-    containerCardDescricao.className = 'w-48 h-28 bg-orange-600 rounded-[10px] shadow hidden';
+    containerCardDescricao.className = 'w-48 h-28 bg-orange-600 rounded-[10px] shadow hidden relative';
 
-    const descricaoLabel = document.createElement('label');
-    descricaoLabel.className = 'relative bottom-10 text-white text-xs font-medium fontText ml-5';
-    descricaoLabel.textContent = "Blender de Carne de 200g"
+    const descricao = document.createElement('p');
+    descricao.className = 'text-white text-xs font-medium fontText ml-5 block';
+    descricao.textContent = hamburguerIngrediente.descricao;
 
     const btnOcultarDescricao = document.createElement('button');
+    btnOcultarDescricao.className = 'w-8 h-16 absolute bottom-0 right-0 bg-white rounded-tl-[10px] rounded-br-[10px]';
+
     const imgSetaOcultarDescricao = document.createElement('img');
-    imgSetaOcultarDescricao.src = '../../images/iconeDescricaoOpen.png';
+    imgSetaOcultarDescricao.src = '../../images/iconDescOrang.png';
+    imgSetaOcultarDescricao.className = 'mx-auto';
+
     btnOcultarDescricao.appendChild(imgSetaOcultarDescricao);
     btnOcultarDescricao.addEventListener("click", () => {
         container.classList.remove('hidden');
@@ -184,9 +187,8 @@ function layoutCardIngrediente(hamburguerIngrediente) {
     })
 
     containerCardDescricao.appendChild(labelBack.cloneNode(true));
-    containerCardDescricao.appendChild(input.cloneNode(true));
-    containerCardDescricao.appendChild(descricaoLabel)
     containerCardDescricao.appendChild(btnOcultarDescricao);
+    containerCardDescricao.appendChild(descricao)
 
     elementCard.appendChild(containerCardDescricao);
 }

@@ -22,8 +22,8 @@
     <title>Detalhes</title>
 </head>
 
-<body class="max-sm: bg-slate-100 text-orange-600 px-8 py-5 overflow-y-auto fontText">
-    <header>
+<body class="max-sm: bg-slate-100 text-orange-600  py-5 overflow-y-auto fontText">
+    <header class="px-5">
         <div class="flex flex-row justify-between">
             <img id="arrowBackPage" src="../../iconsFood/voltar.svg" alt="icone de volta a tela anterior">
             <div class="text-orange-600 text-3xl font-bold fontText" id="nomeDoLanche"></div>
@@ -59,28 +59,33 @@
     </header>
 
     <main>
-        <div class="w-[350px] h-[310px] mx-auto mt-16">
-            <img src="" alt="" id="imageHamburguer">
+        <div class="px-5">
+            <div class="w-[350px] h-[310px] mx-auto mt-16">
+                <img src="" alt="" id="imageHamburguer">
+            </div>
+
+            <div id="containerBtn" class="w-[236px] h-[50px] m-auto mt-11 "></div>
+
+            <p class="text-orange-600 text-xl font-bold fontText mt-12">Ingredientes / Adicionais</p>
         </div>
 
-        <div id="containerBtn" class="w-[236px] h-[50px] m-auto mt-11 "></div>
 
         <div class="mt-10 flex flex-col gap-3">
-            <p class="text-orange-600 text-xl font-bold fontText">Ingredientes / Adicionais</p>
-            
-            <div id="cardAdicionais" class="overflow-x-scroll"></div>
-        <div class="flex justify-between relative bottom-4 mt-8">
-            <p class="font-bold fontText text-[28px]" id="precoLanche"></p>
-            <div id="btnAddCart"></div>
-        </div>
-        
+            <div id="cardAdicionais"></div>
+            <div class="flex justify-between relative bottom-4 mt-8 px-5">
+                <p class="font-bold fontText text-[28px]" id="precoLanche"></p>
+                <div id="btnAddCart"></div>
+            </div>
+
     </main>
 </body>
+
 
 <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore-compat.js"></script>
 <script src="../../js/keys.firebase.js"></script>
+
 <script src="../../js/hamburguerJs/detailsHamburguer.js"></script>
 <script src="../../js/components/adicionarOuRenoverQuantidade.js"></script>
 <script src="../../js/components/bottonCarrinho.js"></script>
