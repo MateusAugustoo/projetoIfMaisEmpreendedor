@@ -15,7 +15,7 @@ formLogin.addEventListener("submit", function (event) {
     const userId = user.uid;
     const userEmail = user.email;
     
-    if (userEmail === 'pizzaramosadmin@gmail.com') {
+    if (userEmail === 'admin@admin.com') {
       window.location.href = `../dashboard/dashboard.adm.html?uid=${userId}`;
     } else {
       window.location.href = `../screens/home.html?uid=${userId}`;
@@ -32,9 +32,6 @@ btnGoogle.addEventListener("click", function (event) {
   auth.signInWithRedirect(googleProvider);
 });
 
-//Login Via Facebook
-
-// Redirecionar 
 auth.getRedirectResult(auth).then((_) => {
   const user = auth.currentUser;
   const userId = user.uid;
@@ -45,3 +42,10 @@ auth.getRedirectResult(auth).then((_) => {
     }
   });
 });
+
+//logout
+function logout() {
+  auth.signOut().then(() => {
+    window.location.href = "../index.html";
+  })
+}
